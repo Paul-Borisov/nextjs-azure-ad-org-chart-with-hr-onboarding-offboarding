@@ -11,13 +11,20 @@ This is an HR onboarding and offboarding web app for managing employees in Azure
 
 ### Backend
 
-Next.js 14.2.4, Auth.js v5, Entra ID with MS Graph, Prisma with SLQLITE (default for quick start) / Azure SQL / Postgres providers, Azure App Service, Azure Automation with Hybrid Workers.
+- Next.js 14.2.4
+- Auth.js v5, OAuth2 / JWT
+- Entra ID with MS Graph REST API, delegated API permissions
+- Prisma with SLQLITE (default for quick start) / Azure SQL / Postgres providers
+- Optional Azure Automation with Hybrid Worker to handle operations on local AD users
+- Seamlessly deployable on Azure App Service. Recommended App Plan is Linux, 4Gb.
 
 ### Frontend
 
-React Hook Forms, Zod, Tanstack Query, i18n Next (EN, FI, NO locales), Next Themes.
-
-UI kits: Radix UI, Fluent UI, Tailwind CSS.
+- React Hook Forms, Zod
+- Tanstack Query
+- i18n Next with support of EN, FI, NO locales
+- Next Themes
+- UI kits: Radix UI, Fluent UI, Tailwind CSS
 
 # Getting Started
 
