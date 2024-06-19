@@ -98,22 +98,42 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ### Screenshots
 
+Full plain hierarchy
+
 ![Full plain hierarchy](samples/images/1_full-plain-hierarchy.png "Full plain hierarchy")
+
+Three levels tree-view grouped by units, departments, and teams
 
 ![Three levels tree-view grouped by units, departments, and teams](samples/images/2_three-levels-tree-view-grouped-by-units-departments-teams.png "Three levels tree-view grouped by units, departments, and teams")
 
+Dialog to change groupings
+
 ![Dialog to change groupings](samples/images/3_dialog-to-change-groupings.png "Dialog to change groupings")
+
+Filtered view grouped by Country, Company, and Manager "andreas" with user-card
 
 ![Filtered view grouped by Country, Company, and Manager "andreas" with user-card](samples/images/4_filtered-view-grouped-by-country-company-manager-andreas-user-card.png "Filtered view grouped by Country, Company, and Manager "andreas" with user-card")
 
+Adding a new Azure AD user for a manager
+
 ![Adding a new Azure AD user for a manager](samples/images/5_adding-a-new-azure-ad-user-for-manager.png "Adding a new Azure AD user for a manager")
+
+User account created, sending an email to inform the manager
 
 ![User account created, sending an email to inform the manager](samples/images/6_user-account-created-send-mail-to-inform-manager.png "User account created, sending an email to inform the manager")
 
+Options to manage this user
+
 ![Options to manage this user](samples/images/7_options-to-manage-this-user.png "Options to manage this user")
+
+User data
 
 ![User data](samples/images/8_aad-user-1.png "User data")
 
+More user data
+
 ![More user data](samples/images/9_aad-user-2.png "More user data")
+
+Disable or delete user. Deleted user
 
 ![Disable or delete user. Deleted user](samples/images/10_disable-delete-deleted-user.png "Disable or delete user. Deleted user")
