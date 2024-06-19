@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  with-docker-multi-env-development:
+    build:
+      context: ../../
+      dockerfile: docker/prod/Dockerfile
+    image: hr-org-chart-nextjs-14-prod
+    ports:
+      - "3000:3000"

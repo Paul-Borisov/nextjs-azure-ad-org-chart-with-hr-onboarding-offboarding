@@ -1,0 +1,30 @@
+import { SharepointFields } from "./sharepointFields";
+
+export enum FormFields {
+  addToAzure = "addToAzure",
+  addDataToSharepoint = "addDataToSharepoint",
+  createAzureAccount = "createAzureAccount",
+  createLocalAdAccount = "createLocalAdAccount",
+  disableAccount = "disableAccount",
+  displayName = "displayName",
+  employeeId = "employeeId",
+  firstName = "firstName",
+  jobTitle = "jobTitle",
+  lastName = "lastName",
+  listItemId = "listItemId",
+  manager = "manager",
+  managerUpn = "managerUpn",
+  removeAccount = "removeAccount",
+  selectedGroups = "selectedGroups",
+  updateAdAccount = "updateAdAccount",
+  userPhoto = "userPhoto",
+  userPrincipalName = "userPrincipalName",
+  // Customer-specific fields
+  dateOfHire = SharepointFields.dateOfHire,
+  dateOfBirth = SharepointFields.dateOfBirth,
+  mobilePhone = SharepointFields.mobilePhone,
+  orgUnit = SharepointFields.orgUnit,
+  orgDepartment = SharepointFields.orgDepartment,
+  orgTeam = SharepointFields.orgTeam,
+  workPhone = SharepointFields.workPhone,
+}

@@ -1,0 +1,49 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+// https://www.prisma.io/docs/getting-started/quickstart
+
+// Remove node_modules/.prisma and execute to recreate it with a fresh schema
+// npx prisma generate
+// After that create the database, which has the schema below, using the migration command
+// npx prisma migrate dev --name init
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+datasource db {
+   provider = "sqlite"
+   url      = env("DATABASE_URL")
+}
+
+// datasource db {
+//   //https://developer.mozilla.org/en-US/docs/Glossary/percent-encoding
+//   provider = "postgresql"
+//   url      = env("DATABASE_URL")
+// }
+
+// datasource db {
+//    provider = "sqlserver"
+//    url      = env("DATABASE_URL")
+// }
+
+model users {
+  id String @id
+  properties String
+  modified DateTime
+  isNew Boolean @default(false)
+  
+  @@unique(id(sort: Desc))
+  @@index([properties(sort: Asc)]) // sqlite supports this while azure sql does not (no indexes for MAX)
+  @@index([modified(sort: Asc)])
+  @@index([isNew(sort: Asc)])
+}
+
+model userPhotos {
+  id String @id
+  photo String?
+  modified DateTime
+
+  @@unique(id(sort: Desc))
+  @@index([modified(sort: Asc)])
+}
