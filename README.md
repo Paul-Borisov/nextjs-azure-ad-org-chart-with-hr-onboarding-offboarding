@@ -1,4 +1,4 @@
-# HR onboarding and offboarding web app for Azure AD and local AD with flexible Organizational Charts.
+# HR onboarding and offboarding web app for Azure AD and local AD with flexible Organizational Charts
 
 This is an HR onboarding and offboarding web app for managing employees in Azure AD and hybrid local AD.
 
@@ -7,7 +7,7 @@ This is an HR onboarding and offboarding web app for managing employees in Azure
 - The app also offers configurable Organizational Charts that provide displaying company hierarchies based on users attributes of Azure AD.
 - Organizational Charts support flexible grouping by multiple user attributes up to 5 levels deep and up to 5 horizontal columns.
 
-## Technological stack
+## Technical stack
 
 ### Backend
 
