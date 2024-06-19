@@ -16,7 +16,7 @@ This is an HR onboarding and offboarding web app for managing employees in Azure
 - Entra ID with MS Graph REST API, delegated API permissions.
 - Prisma ORM with SLQLITE (default for quick start) / Azure SQL / Postgres providers.
   - Also tested with Drizzle ORM. However, it did not support Azure SQL that we used to host our DB.
-- Worker threads to support loading optional user images in non-blocking way.
+- Worker threads to support loading optional user images in a non-blocking way.
   - Server Actions have problems in handling multiple simultaneous mutations.
   - They should not be used for making intensive parallel mutations because they tend to block the main thread despite of async processing.
   - However, I found it possible to use worker threads in Next.js. This is poorly documented, but it works well.
