@@ -60,6 +60,8 @@ npm i
 turbo dev
 # or
 npm run dev
+# In order to run a locally compiled standalone version use
+node .next/standalone/server.js
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
