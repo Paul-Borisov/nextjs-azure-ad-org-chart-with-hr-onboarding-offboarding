@@ -112,7 +112,7 @@ Dialog to change groupings
 
 Filtered view grouped by Country, Company, and Manager "andreas" with user-card
 
-![Filtered view grouped by Country, Company, and Manager "andreas" with user-card](samples/images/4_filtered-view-grouped-by-country-company-manager-andreas-user-card.png "Filtered view grouped by Country, Company, and Manager "andreas" with user-card")
+![Filtered view grouped by Country, Company, and Manager 'andreas' with user-card](samples/images/4_filtered-view-grouped-by-country-company-manager-andreas-user-card.png "Filtered view grouped by Country, Company, and Manager 'andreas' with user-card")
 
 Adding a new Azure AD user for a manager
 
