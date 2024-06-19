@@ -14,7 +14,8 @@ This is an HR onboarding and offboarding web app for managing employees in Azure
 - Next.js 14.2.4
 - Auth.js v5, OAuth2 / JWT
 - Entra ID with MS Graph REST API, delegated API permissions
-- Prisma with SLQLITE (default for quick start) / Azure SQL / Postgres providers
+- Prisma ORM with SLQLITE (default for quick start) / Azure SQL / Postgres providers
+  - Also tested with Drizzle ORM. However, it did not support Azure SQL that we used to host our DB
 - Optional Azure Automation with Hybrid Worker to handle operations on local AD users
 - Seamlessly deployable on Azure App Service. Recommended App Plan is Linux, 4Gb.
 
