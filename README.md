@@ -5,7 +5,7 @@ This is an HR onboarding and offboarding web app for managing employees in Azure
 - The app provides convenient options to create, update, and delete Entra ID and hybrid local AD accounts without a need to open VPN
   - In order to provide optional operations on local AD, the app uses standard capabilities of Azure Automation Hybrid Worker.
 - The app also offers configurable Organizational Charts that provide displaying company hierarchies based on users attributes of Azure AD.
-- Organizational Charts support flexible grouping by multiple user attributes and up to 5 horizontal columns.
+- Organizational Charts support flexible grouping by multiple user attributes up to 5 levels deep and up to 5 horizontal columns.
 
 ## Technological stack
 
