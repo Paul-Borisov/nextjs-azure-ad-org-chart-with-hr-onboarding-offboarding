@@ -30,7 +30,7 @@ This is an HR onboarding and offboarding web app for managing employees in Azure
 - i18n Next with support of EN, FI, NO locales
 - Next Themes, Dark and Light themes for all components
 - UI kits: Radix UI, Fluent UI, Tailwind CSS
-- PDF printing
+- PDF printing with no external modules
 
 # Getting Started
 
