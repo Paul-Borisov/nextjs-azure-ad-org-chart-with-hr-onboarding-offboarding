@@ -63,15 +63,15 @@ The app is intended to run on Azure App Service. Recommended configuration: Linu
 - az webapp config set --resource-group "YOUR-RESOURCE-GROUP" --name "company-hr-onboarding" --startup-file "node server.js"
 - An example: https://dev.to/paulriviera/deploy-nextjs-14-app-to-linux-azure-app-service-3d34
 
-### The configured command "npm run build" uses:
+The configured command "npm run build" uses:
 
-### On Windows
+On Windows
 
-### next build && @powershell copy .next/static .next/standalone/.next/static -recurse -force && @powershell copy public .next/standalone/public -recurse -force
+next build && @powershell copy .next/static .next/standalone/.next/static -recurse -force && @powershell copy public .next/standalone/public -recurse -force
 
-### On Linux
+On Linux
 
-### next build && cp -r -f .next/static .next/standalone/.next/static && cp -r -f public .next/standalone/public
+next build && cp -r -f .next/static .next/standalone/.next/static && cp -r -f public .next/standalone/public
 
 Run:
 
