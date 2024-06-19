@@ -32,6 +32,7 @@ This is an HR onboarding and offboarding web app for managing employees in Azure
 
 Create Azure App registration using the sample script located in samples/1_create-app-registration.ps1
 
+- Ignore xml-files used to create for SharePoint Online lists. SharePoint options are not in use by default.
 - Note that all permissions are "delegated" meaning the user must have corresponding rights to use them as declared.
 - In Entra ID operations on user management are available only for users that belong to the roles of User Administrators or Global Administrators.
 - Users with lower privilegies will only access Organizational Charts without controls to manage users.
@@ -44,15 +45,24 @@ Create Azure App registration using the sample script located in samples/1_creat
   - Directory.AccessAsUser.All: delegated permission used for admin impersonations.
   - AllSites.Write: this SharePoint permission is not required in default configurations and can be removed.
 
-Make sure you gave Admin consent to approve the permissions.
+Make sure you granted Admin consent to approve the permissions.
 
-Optionally, you can enable operations on hybrid local AD.
+Optionally, you can enable operations on a hybrid local AD.
 
 - Create Azure Automation account. Deploy two Powershell runbooks located in src/azureAutomation/runbooks. Adjust headers if required.
 - Create and connect Hybrid Worker to a Windows Server VM running in the local AD network.
 - This VM must have standard Active Directory PowerShell Module installed to operate with AD.
 
 Running in the development environment:
+
+- You should create .env using .env.example as a sample
+- Update at least the following settings:
+  - AZURE_AD_CLIENT_ID, AZURE_AD_CLIENT_SECRET (use the App registration created above), AZURE_AD_TENANT_ID
+  - AZURE_AD_GRAPH_QUERY_USERS, review user attributes that you'd need
+  - DATABASE_URL, it uses local SQLITE file by default
+  - RENDER_USER_PHOTO_ON_CLIENT, RENDER_USER_PHOTO_ON_SERVER: keep them off to start faster
+  - TREEVIEW_COLLAPSE_ON_ROOT: optionally change to false should you have quirks
+  - USER_CARD_ATTRIBUTES: review user attributes that you'd need
 
 ```bash
 cd src
