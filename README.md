@@ -11,7 +11,7 @@ This is an HR onboarding and offboarding web app for managing employees in Azure
 
 ### Backend
 
-- Next.js 14.2.4, turbo pack
+- Next.js 14.2.4, turbo pack, React 18
 - Auth.js v5, OAuth2 / JWT
 - Entra ID with MS Graph REST API, delegated API permissions
 - Prisma ORM with SLQLITE (default for quick start) / Azure SQL / Postgres providers
@@ -24,8 +24,9 @@ This is an HR onboarding and offboarding web app for managing employees in Azure
 - React Hook Forms, Zod
 - Tanstack Query
 - i18n Next with support of EN, FI, NO locales
-- Next Themes
+- Next Themes, Dark and Light themes for all components
 - UI kits: Radix UI, Fluent UI, Tailwind CSS
+- PDF printing
 
 # Getting Started
 
