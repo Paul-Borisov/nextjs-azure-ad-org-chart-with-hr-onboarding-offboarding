@@ -11,15 +11,37 @@ This is an HR onboarding and offboarding web app for managing employees in Azure
 
 ### Backend
 
-Next.js 14.2.4, Auth.js v5, Entra ID with MS Graph, Prisma with SLQLITE / Postgres / Azure SQL providers, Azure App Service, Azure Automation with Hybrid Workers.
+Next.js 14.2.4, Auth.js v5, Entra ID with MS Graph, Prisma with SLQLITE (default for quick start) / Azure SQL / Postgres providers, Azure App Service, Azure Automation with Hybrid Workers.
 
 ### Frontend
 
 React Hook Forms, Zod, Tanstack Query, i18n Next (EN, FI, NO locales), Next Themes.
 
-UI kits: Radix UI, Fluent UI, Tailwind.
+UI kits: Radix UI, Fluent UI, Tailwind CSS.
 
 # Getting Started
+
+Create Azure App registration using the sample script located in samples/1_create-app-registration.ps1
+
+- Note that all permissions are "delegated" meaning the user must have corresponding rights to use them as declared.
+- In Entra ID operations on user management are available only for users that belong to the roles of User Administrators or Global Administrators.
+- Users with lower privilegies will only access Organizational Charts without controls to manage users.
+- Overview of permissions:
+
+  - offline_access: delegated permission required to support refresh tokens
+  - User.ReadWrite.All: delegated permission to manage user's attributes.
+  - Directory.Read.All: delegated permission to read groups and enumerate global roles like User Administrators or Global Administrators.
+  - Group.ReadWrite.All: delegated permission to add members to groups.
+  - Directory.AccessAsUser.All: delegated permission used for admin impersonations.
+  - AllSites.Write: this SharePoint permission is not required in default configurations and can be removed.
+
+Make sure you gave Admin consent to approve the permissions.
+
+Optionally, you can enable operations on hybrid local AD.
+
+- Create Azure Automation account. Deploy two Powershell runbooks located in src/azureAutomation/runbooks. Adjust headers if required.
+- Create and connect Hybrid Worker to a Windows Server VM running in the local AD network.
+- This VM must have standard Active Directory PowerShell Module installed to operate with AD.
 
 Running in the development environment:
 
