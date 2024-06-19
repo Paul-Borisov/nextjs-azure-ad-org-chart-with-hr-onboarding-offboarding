@@ -11,12 +11,16 @@ This is an HR onboarding and offboarding web app for managing employees in Azure
 
 ### Backend
 
-- Next.js 14.2.4, turbo pack, React 18
-- Auth.js v5, OAuth2 / JWT
-- Entra ID with MS Graph REST API, delegated API permissions
-- Prisma ORM with SLQLITE (default for quick start) / Azure SQL / Postgres providers
-  - Also tested with Drizzle ORM. However, it did not support Azure SQL that we used to host our DB
-- Optional Azure Automation with Hybrid Worker to handle operations on local AD users
+- Next.js 14.2.4, turbo pack, React 18.
+- Auth.js v5 for App Router, OAuth2 / JWT. Default auth provider is Microsoft Entra ID.
+- Entra ID with MS Graph REST API, delegated API permissions.
+- Prisma ORM with SLQLITE (default for quick start) / Azure SQL / Postgres providers.
+  - Also tested with Drizzle ORM. However, it did not support Azure SQL that we used to host our DB.
+- Worker threads to support loading optional user images in non-blocking way.
+  - Server Actions have problems in handling multiple simultaneous mutations.
+  - They should not be used for making intensive parallel mutations because they tend to block the main thread despite of async processing.
+  - However, I found it possible to use worker threads in Next.js. This is poorly documented, but it works well.
+- Optional Azure Automation with Hybrid Worker to handle operations on local AD users.
 - The app is seamlessly deployable on Azure App Service. Recommended App Plan is Linux, 4Gb (1.75GB is not enough).
 
 ### Frontend
