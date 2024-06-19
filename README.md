@@ -46,6 +46,8 @@ Optionally, you can enable operations on hybrid local AD.
 Running in the development environment:
 
 ```bash
+cd src
+npm i
 # Turbopack integration for Next 14.2.x
 turbo dev
 # or
