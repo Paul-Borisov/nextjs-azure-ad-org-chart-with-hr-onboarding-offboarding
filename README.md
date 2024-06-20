@@ -14,30 +14,30 @@ This HR onboarding and offboarding web application solves most frequently proble
 
 ## Supported features
 
-1. Full-size <a href="samples/images/1_full-plain-hierarchy.png" target="_blank">hierarchical</a> and <a href="samples/images/2_three-levels-tree-view-grouped-by-units-departments-teams.png" target="_blank">Organizationals</a> Charts with configurable levels.
+1. Full-size <a href="samples/images/1_full-plain-hierarchy.png" target="_blank" data-interception="off">hierarchical</a> and <a href="samples/images/2_three-levels-tree-view-grouped-by-units-departments-teams.png" target="_blank" data-interception="off">Organizationals</a> Charts with configurable levels.
 
 - They provide visual presentation of company's hierarchy based on selected attributes such as units, departments, teams, and manager-subordinate relations.
 - In order to generate Org Chart hierarchies using Entra ID data, the user has to be authenticated via the standard login URL of Microsoft 365.
   - While the user is not authenticated, mockup data is shown by default. This can be turned off in .env settings.
-- Hierarchies are <a href="samples/images/3_dialog-to-change-groupings.png" target="_blank">configurable</a> and printable.
+- Hierarchies are <a href="samples/images/3_dialog-to-change-groupings.png" target="_blank" data-interception="off">configurable</a> and printable.
 - The views support full and partial <a href="4_filtered-view-grouped-by-country-company-manager-andreas-user-card.png" target="_blank">search</a> by user's name.
 
 2. Creating a new user account in Entra ID or hybrid local AD at any level of the hierarchy under the supervision of a specific manager.
 
-- <a href="samples/images/5_adding-a-new-azure-ad-user-for-manager.png" target="_blank">This option</a> is available only for users that belong to global Entra ID roles of User Administrator or Global Administrator. Security checks are automatic so regular users cannot see this feature.
+- <a href="samples/images/5_adding-a-new-azure-ad-user-for-manager.png" target="_blank" data-interception="off">This option</a> is available only for users that belong to global Entra ID roles of User Administrator or Global Administrator. Security checks are automatic so regular users cannot see this feature.
 - Required fields are minimal and include only First and Last name. The most of other attributes are optional or can be copied from the selected manager.
 - The creator can choose:
   - Account type being created - cloud-only (Entra ID only) or hybrid local AD with sync via AD Connect
   - Desired security groups to add the new user to. Default groups are taken from env-variables, more can be selected in UI.
   - User photo for the new account.
-  - Sending a <a href="samples/images/6_user-account-created-send-mail-to-inform-manager.png">summary email</a> to the manager after successfully creating the user.
+  - Sending a <a href="samples/images/6_user-account-created-send-mail-to-inform-manager.png" data-interception="off">summary email</a> to the manager after successfully creating the user.
 
 3. Two-stage offboarding for the leving employee.
 
-- <a href="samples/images/10_disable-delete-deleted-user.png" target="_blank">Stage 1</a> disables the existing employee in Azure AD or hybrid local AD, resets password, and removes group memberships. This stage is optional.
+- <a href="samples/images/10_disable-delete-deleted-user.png" target="_blank" data-interception="off">Stage 1</a> disables the existing employee in Azure AD or hybrid local AD, resets password, and removes group memberships. This stage is optional.
 - Stage 2 removes employee's account from Azure AD or hybrid local AD.
 
-4. <a href="samples/images/7_options-to-manage-this-user.png" target="_blank">Updating attributes</a> of existing users in Entra ID or hybrid local AD.
+4. <a href="samples/images/7_options-to-manage-this-user.png" target="_blank" data-interception="off">Updating attributes</a> of existing users in Entra ID or hybrid local AD.
 
 - This is an experimental feature, which currently supports changing EmployeeId. Mismatching EmployeeId was a frequent problem of my customer.
 
