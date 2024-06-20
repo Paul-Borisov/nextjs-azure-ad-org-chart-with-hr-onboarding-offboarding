@@ -42,13 +42,13 @@ This HR onboarding and offboarding web application solves most frequently proble
 
 In the safest scenario, you should deploy this Next.js web app either locally or on a server located within LAN.
 
-- This way would provide more enhanced protection from unauthorized use.
-- Users must be authenticated in order to see actual data acquired from Azure AD.
+- This way provides more enhanced protection against an unauthorized access.
+- Users must be authenticated via the standard Microsoft login in order to get access to data acquired from Azure AD.
 
 Alternatively, this application can be deloyed as a Cloud service hosted in Azure, Vercel, or AWS.
 
 - In this case, make sure you have restricted network access to the web app to specific IP segments.
-- Do not expose your cloud app to the entire Internet.
+- This is is highly not recommended to leave your cloud app exposed to the entire Internet.
 
 ## Supported features
 
