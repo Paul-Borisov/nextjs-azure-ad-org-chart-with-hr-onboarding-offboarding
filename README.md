@@ -24,7 +24,7 @@ This HR onboarding and offboarding web application solves most frequently proble
 - Server-side worker threads (Node.js worker_threads) to support loading optional user images in a non-blocking way.
   - Server Actions have problems in handling multiple simultaneous mutations.
   - They should not be used for making intensive parallel mutations because they tend to block the main thread despite of async processing.
-  - However, I found it possible to use worker threads in Next.js. This is poorly documented, but it works well.
+  - However, I found it possible to use worker threads in Next.js. They are poorly documented, but work quite well.
 - Optional Azure Automation with Hybrid Worker to handle operations on local AD users.
 - The app is seamlessly deployable on Azure App Service. Recommended App Plan is Linux, 4Gb (1.75GB is not enough).
   - Make sure you have restricted network access to your App Service for specific virtual networks and/or IP addresses.
