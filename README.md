@@ -45,10 +45,10 @@ In the safest scenario, you should deploy this Next.js web app either locally or
 - This way provides more enhanced protection against an unauthorized access.
 - Users must be authenticated via the standard Microsoft login in order to get access to data acquired from Entra ID.
 
-Alternatively, this application can be deloyed as a Cloud service hosted in Azure, Vercel, or AWS.
+Alternatively, this application can be deployed as a Cloud service hosted in Azure, Vercel, or AWS.
 
 - In this case, make sure you have restricted network access to the web app to specific IP segments.
-- This is is highly not recommended to leave your cloud app exposed to the entire Internet.
+- This is highly not recommended to leave your cloud app exposed to the entire Internet.
 
 ## Supported features
 
@@ -70,7 +70,7 @@ Alternatively, this application can be deloyed as a Cloud service hosted in Azur
   - User photo for the new account.
   - Sending a <a href="samples/images/6_user-account-created-send-mail-to-inform-manager.png" data-interception="off">summary email</a> to the manager after successfully creating the user.
 
-3. Two-stage offboarding for the leving employee.
+3. Two-stage offboarding for the leaving employee.
 
 - <a href="samples/images/10_disable-delete-deleted-user.png">Stage 1</a> disables the existing employee in Azure AD or hybrid local AD, resets password, and removes group memberships. This stage is optional.
 - Stage 2 removes employee's account from Azure AD or hybrid local AD.
