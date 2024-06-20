@@ -27,6 +27,7 @@ This HR onboarding and offboarding web application solves most frequently proble
   - However, I found it possible to use worker threads in Next.js. This is poorly documented, but it works well.
 - Optional Azure Automation with Hybrid Worker to handle operations on local AD users.
 - The app is seamlessly deployable on Azure App Service. Recommended App Plan is Linux, 4Gb (1.75GB is not enough).
+  - Make sure you have restricted network access to your App Service for specific virtual networks and/or IP addresses.
 
 ### Frontend
 
@@ -36,6 +37,13 @@ This HR onboarding and offboarding web application solves most frequently proble
 - Next Themes, Dark and Light themes for all components
 - UI kits: Radix UI, Fluent UI, Tailwind CSS
 - PDF printing with no external modules
+
+### Security
+
+In the best scenario, deploy this web app to the local server located within the company premises. This way implies more enhanced security.
+
+Alternatively, you can deloy this app as a Cloud service hosted in Azure, Vercel, or AWS.
+In this case, make sure you have restricted network access to the web app. Do not expose your cloud service to the entire Internet.
 
 ## Supported features
 
