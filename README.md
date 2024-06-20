@@ -52,7 +52,7 @@ Alternatively, this application can be deloyed as a Cloud service hosted in Azur
 
 ## Supported features
 
-1. Full-size <a href="samples/images/1_full-plain-hierarchy.png">hierarchical</a> and <a href="samples/images/2_three-levels-tree-view-grouped-by-units-departments-teams.png">Organizationals</a> Charts with configurable levels.
+1. Full-size <a href="samples/images/1_full-plain-hierarchy.png">hierarchical</a> and <a href="samples/images/2_three-levels-tree-view-grouped-by-units-departments-teams.png">Organizational</a> Charts with configurable levels.
 
 - They provide visual presentation of company's hierarchy based on selected attributes such as units, departments, teams, and manager-subordinate relations.
 - In order to generate Org Chart hierarchies using Entra ID data, the user has to be authenticated via the standard login URL of Microsoft 365.
