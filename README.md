@@ -1,11 +1,43 @@
 # HR onboarding and offboarding web app for Azure AD and local AD with flexible Organizational Charts
 
-This is an HR onboarding and offboarding web app for managing employees in Azure AD and hybrid local AD.
+This is known that onboarding a new employee to company's working staff and offboarding of leaving members are continuous processes.
+However, significant parts of these routines can be automated. For instance, the new employee typically joins specific manager's team.
+This implies we can copy repeating parts of employee's attributes such as unit, department, country, subsidiary address and so on from the manager.
+Also, there are standard routines such as generating new sign-in credentials, joining required security groups, sending a summary report to the manager.
 
-- The app provides convenient options to create, update, and delete Entra ID and hybrid local AD accounts without a need to open VPN
-  - In order to provide optional operations on local AD, the app uses standard capabilities of Azure Automation Hybrid Worker.
-- The app also offers configurable Organizational Charts that provide displaying company hierarchies based on users attributes of Azure AD.
-- Organizational Charts support flexible grouping by multiple user attributes up to 5 levels deep and up to 5 horizontal columns.
+This HR onboarding and offboarding web application solves most frequently problems related to managing employee accounts in Azure AD and hybrid local AD.
+
+- It provides convenient options to quickly create, update, and delete Entra ID and hybrid local AD accounts without a need of opening a VPN connection.
+- The app offers configurable Organizational Charts that provide displaying company hierarchies based on users attributes stored in Azure AD.
+- Organizational Charts support flexible grouping by multiple user attributes up to 5 levels deep and up to 5 columns long.
+- Optional operations on local AD are done using proxy-capabilities of Azure Automation Hybrid Worker connected to a VM with access to local AD.
+
+## Supported features
+
+1. Full-size <a href="samples/images/1_full-plain-hierarchy.png" target="_blank">hierarchical</a> and <a href="samples/images/2_three-levels-tree-view-grouped-by-units-departments-teams.png" target="_blank">Organizationals</a> Charts with configurable levels.
+
+- They provide visual presentation of company's hierarchy based on selected attributes such as units, departments, teams, and manager-subordinate relations.
+- In order to generate Org Chart hierarchies using Entra ID data, the user has to be authenticated via the standard login URL of Microsoft 365.
+  - While the user is not authenticated, mockup data is shown by default. This can be turned off in .env settings.
+- Hierarchies are <a href="samples/images/3_dialog-to-change-groupings.png" target="_blank">configurable</a> and printable.
+- Partial Org Chart views provided, for instance, by Delve are inconvenient in use.
+
+2. Creating a new user account in Entra ID or hybrid local AD at any level of the hierarchy under the supervision of a specific manager.
+
+- <a href="samples/images/5_adding-a-new-azure-ad-user-for-manager.png" target="_blank">This option</a> is available only for users that belong to global Entra ID roles of User Administrator or Global Administrator. Security checks are automatic so regular users cannot see this feature.
+- Required fields are minimal and include only First and Last name. The most of other attributes are optional or can be copied from the selected manager.
+- The creator can choose account type being created - cloud-only (Entra ID only) or hybrid local AD with sync via AD Connect
+- The creator can select corresponding security groups to add the new user to. Default groups are taken from env-variables, more can be selected in UI.
+- The creator can send a <a href="samples/images/6_user-account-created-send-mail-to-inform-manager.png">summary email</a> to the manager after successfully creating the user.
+
+3. Two-stage offboarding for the leving employee.
+
+- <a href="samples/images/10_disable-delete-deleted-user.png" target="_blank">Stage 1</a> disables the existing employee in Azure AD or hybrid local AD, resets password, and removes group memberships. This stage is optional.
+- Stage 2 removes employee's account from Azure AD or hybrid local AD.
+
+4. <a href="samples/images/7_options-to-manage-this-user.png" target="_blank">Updating attributes</a> of existing users in Entra ID or hybrid local AD.
+
+- This is an experimental feature, which currently supports changing EmployeeId. Mismatching EmployeeId was a frequent problem of my customer.
 
 ## Technical stack
 
