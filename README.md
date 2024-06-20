@@ -155,7 +155,7 @@ you should add the environment variable AUTH_URL=https://<your-web-app> to enabl
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-### Screenshots
+## Screenshots
 
 Full plain hierarchy
 
