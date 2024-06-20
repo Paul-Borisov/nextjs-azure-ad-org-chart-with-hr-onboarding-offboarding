@@ -38,12 +38,17 @@ This HR onboarding and offboarding web application solves most frequently proble
 - UI kits: Radix UI, Fluent UI, Tailwind CSS
 - PDF printing with no external modules
 
-### Security
+### Restricted access
 
-In the best scenario, deploy this web app to the local server located within the company premises. This way implies more enhanced security.
+In the safest scenario, you should deploy this Next.js web app either locally or on a server located within LAN.
 
-Alternatively, you can deloy this app as a Cloud service hosted in Azure, Vercel, or AWS.
-In this case, make sure you have restricted network access to the web app. Do not expose your cloud service to the entire Internet.
+- This way would provide more enhanced protection from unauthorized use.
+- Users must be authenticated in order to see actual data acquired from Azure AD.
+
+Alternatively, this application can be deloyed as a Cloud service hosted in Azure, Vercel, or AWS.
+
+- In this case, make sure you have restricted network access to the web app to specific IP segments.
+- Do not expose your cloud app to the entire Internet.
 
 ## Supported features
 
