@@ -12,6 +12,31 @@ This HR onboarding and offboarding web application solves most frequently proble
 - Organizational Charts support flexible grouping by multiple user attributes up to 5 levels deep and up to 5 columns long.
 - Optional operations on local AD are done using proxy-capabilities of Azure Automation Hybrid Worker connected to a VM with access to local AD.
 
+## Technical stack
+
+### Backend
+
+- Next.js 14.2.4, turbo pack, React 18.
+- Auth.js v5 for App Router, OAuth2 / JWT. Default auth provider is Microsoft Entra ID.
+- Entra ID with MS Graph REST API, delegated API permissions.
+- Prisma ORM with SLQLITE (default for quick start) / Azure SQL / Postgres providers.
+  - Also tested with Drizzle ORM. However, it did not support Azure SQL that we used to host our DB.
+- Server-side worker threads (Node.js worker_threads) to support loading optional user images in a non-blocking way.
+  - Server Actions have problems in handling multiple simultaneous mutations.
+  - They should not be used for making intensive parallel mutations because they tend to block the main thread despite of async processing.
+  - However, I found it possible to use worker threads in Next.js. This is poorly documented, but it works well.
+- Optional Azure Automation with Hybrid Worker to handle operations on local AD users.
+- The app is seamlessly deployable on Azure App Service. Recommended App Plan is Linux, 4Gb (1.75GB is not enough).
+
+### Frontend
+
+- React Hook Forms, Zod
+- Tanstack Query
+- i18n Next with support of EN, FI, NO locales
+- Next Themes, Dark and Light themes for all components
+- UI kits: Radix UI, Fluent UI, Tailwind CSS
+- PDF printing with no external modules
+
 ## Supported features
 
 1. Full-size <a href="samples/images/1_full-plain-hierarchy.png">hierarchical</a> and <a href="samples/images/2_three-levels-tree-view-grouped-by-units-departments-teams.png">Organizationals</a> Charts with configurable levels.
@@ -40,31 +65,6 @@ This HR onboarding and offboarding web application solves most frequently proble
 4. <a href="samples/images/7_options-to-manage-this-user.png">Updating attributes</a> of existing users in Entra ID or hybrid local AD.
 
 - This is an experimental feature, which currently supports changing EmployeeId. Mismatching EmployeeId was a frequent problem of my customer.
-
-## Technical stack
-
-### Backend
-
-- Next.js 14.2.4, turbo pack, React 18.
-- Auth.js v5 for App Router, OAuth2 / JWT. Default auth provider is Microsoft Entra ID.
-- Entra ID with MS Graph REST API, delegated API permissions.
-- Prisma ORM with SLQLITE (default for quick start) / Azure SQL / Postgres providers.
-  - Also tested with Drizzle ORM. However, it did not support Azure SQL that we used to host our DB.
-- Server-side worker threads (Node.js worker_threads) to support loading optional user images in a non-blocking way.
-  - Server Actions have problems in handling multiple simultaneous mutations.
-  - They should not be used for making intensive parallel mutations because they tend to block the main thread despite of async processing.
-  - However, I found it possible to use worker threads in Next.js. This is poorly documented, but it works well.
-- Optional Azure Automation with Hybrid Worker to handle operations on local AD users.
-- The app is seamlessly deployable on Azure App Service. Recommended App Plan is Linux, 4Gb (1.75GB is not enough).
-
-### Frontend
-
-- React Hook Forms, Zod
-- Tanstack Query
-- i18n Next with support of EN, FI, NO locales
-- Next Themes, Dark and Light themes for all components
-- UI kits: Radix UI, Fluent UI, Tailwind CSS
-- PDF printing with no external modules
 
 # Getting Started
 
