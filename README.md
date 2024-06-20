@@ -20,7 +20,7 @@ This HR onboarding and offboarding web application solves most frequently proble
 - Auth.js v5 for App Router, OAuth2 / JWT. Default auth provider is Microsoft Entra ID.
 - Entra ID with MS Graph REST API, delegated API permissions.
 - Prisma ORM with SQLITE (default for quick start) / Azure SQL / Postgres providers.
-  - Also tested with Drizzle ORM. However, it did not support Azure SQL that we used to host our DB.
+  - Also tested with Drizzle ORM. However, it did not support Azure SQL, which I used to host my DB instance. So, I decided to keep Prisma.
 - Server-side worker threads (Node.js worker_threads) to support loading optional user images in a non-blocking way.
   - Server Actions have problems in handling multiple simultaneous mutations.
   - They should not be used for making intensive parallel mutations because they tend to block the main thread despite of async processing.
