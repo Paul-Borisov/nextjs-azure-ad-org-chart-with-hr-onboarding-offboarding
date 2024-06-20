@@ -43,7 +43,7 @@ This HR onboarding and offboarding web application solves most frequently proble
 In the safest scenario, you should deploy this Next.js web app either locally or on a server located within LAN.
 
 - This way provides more enhanced protection against an unauthorized access.
-- Users must be authenticated via the standard Microsoft login in order to get access to data acquired from Azure AD.
+- Users must be authenticated via the standard Microsoft login in order to get access to data acquired from Entra ID.
 
 Alternatively, this application can be deloyed as a Cloud service hosted in Azure, Vercel, or AWS.
 
