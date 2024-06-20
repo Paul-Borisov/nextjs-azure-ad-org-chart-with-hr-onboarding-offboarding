@@ -128,7 +128,7 @@ node .next/standalone/server.js
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-# Deploy on Azure App Service (recommended)
+# Deploy on Azure App Service
 
 The app is intended to run on Azure App Service. Recommended configuration: Linux, 4 Gb, Premium Plan (memory vs. price, the most optimal choice).
 
@@ -154,6 +154,8 @@ npm run build
 Deploy:
 
 The entire folder .next/standalone to Azure App Service using Azure Tools extension in VSCode
+
+- Please also refer to the chapter [Restricted access](#restricted-access).
 
 ## Known issues
 
