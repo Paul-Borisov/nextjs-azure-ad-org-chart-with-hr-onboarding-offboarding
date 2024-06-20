@@ -81,7 +81,7 @@ Alternatively, this application can be deloyed as a Cloud service hosted in Azur
 
 # Getting Started
 
-Create Azure App registration using the sample script located in samples/1_create-app-registration.ps1
+Create Azure App registration using the sample script located in <a href="samples/1_create-app-registration.ps1">samples/1_create-app-registration.ps1</a>
 
 - Ignore xml-files used to create for SharePoint Online lists. SharePoint options are not in use by default.
 - Note that all permissions are "delegated" meaning the user must have corresponding rights to use them as declared.
