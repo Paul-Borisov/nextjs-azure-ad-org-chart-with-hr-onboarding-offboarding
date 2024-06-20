@@ -20,7 +20,7 @@ This HR onboarding and offboarding web application solves most frequently proble
 - In order to generate Org Chart hierarchies using Entra ID data, the user has to be authenticated via the standard login URL of Microsoft 365.
   - While the user is not authenticated, mockup data is shown by default. This can be turned off in .env settings.
 - Hierarchies are <a href="samples/images/3_dialog-to-change-groupings.png" target="_blank">configurable</a> and printable.
-- Partial Org Chart views provided, for instance, by Delve are inconvenient in use.
+- The views support full and partial <a href="4_filtered-view-grouped-by-country-company-manager-andreas-user-card.png" target="_blank">search</a> by user's name.
 
 2. Creating a new user account in Entra ID or hybrid local AD at any level of the hierarchy under the supervision of a specific manager.
 
