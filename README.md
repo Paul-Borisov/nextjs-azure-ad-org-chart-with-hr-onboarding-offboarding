@@ -26,9 +26,11 @@ This HR onboarding and offboarding web application solves most frequently proble
 
 - <a href="samples/images/5_adding-a-new-azure-ad-user-for-manager.png" target="_blank">This option</a> is available only for users that belong to global Entra ID roles of User Administrator or Global Administrator. Security checks are automatic so regular users cannot see this feature.
 - Required fields are minimal and include only First and Last name. The most of other attributes are optional or can be copied from the selected manager.
-- The creator can choose account type being created - cloud-only (Entra ID only) or hybrid local AD with sync via AD Connect
-- The creator can select corresponding security groups to add the new user to. Default groups are taken from env-variables, more can be selected in UI.
-- The creator can send a <a href="samples/images/6_user-account-created-send-mail-to-inform-manager.png">summary email</a> to the manager after successfully creating the user.
+- The creator can choose:
+  - Account type being created - cloud-only (Entra ID only) or hybrid local AD with sync via AD Connect
+  - Desired security groups to add the new user to. Default groups are taken from env-variables, more can be selected in UI.
+  - User photo for the new account.
+  - Sending a <a href="samples/images/6_user-account-created-send-mail-to-inform-manager.png">summary email</a> to the manager after successfully creating the user.
 
 3. Two-stage offboarding for the leving employee.
 
