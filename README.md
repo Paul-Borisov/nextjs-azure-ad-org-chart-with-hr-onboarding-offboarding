@@ -20,9 +20,14 @@ This HR onboarding and offboarding web application solves most frequently proble
 - Auth.js v5 for App Router, OAuth2 / JWT. Default auth provider is Microsoft Entra ID.
 - Entra ID with MS Graph REST API, delegated API permissions.
 - Prisma ORM with SQLITE (default for quick start) / Azure SQL / Postgres providers.
-  - Also tested with Drizzle ORM. However, it did not support Azure SQL, which I used to host my DB instance. So, I decided to keep Prisma.
+  - Also tested with Drizzle ORM. However, it did not support Azure SQL, which I used to host my DB instance. I decided to keep Prisma.
 - Server-side worker threads (Node.js worker_threads) to support loading optional user images in a non-blocking way.
-  - Server Actions have problems in handling multiple simultaneous mutations.
+  - I noticed that Server Actions have specific problems when they handle multiple simultaneous data fetching requests or database mutations.
+    - For instance, this is possible to make bulk querying of users from Entra ID and save data to cache such as database "all at once".
+    - However, there is no way to make bulk querying of multiple users' photos. These queries require separate fetch request per each user photo.
+    - Cloud services such as Azure Apps support limited amount of simultaneous fetching requests; this may cause timeouts https://github.com/nodejs/undici/issues/1531
+    - This may suspend new requests within the main thread causing delays even though all requests are made in parallel fetches.
+    - Using server side worker_threads in Next.js solves this problem efficiently. There are no undesired delays in the main thread.
   - They should not be used for making intensive parallel mutations because they tend to block the main thread despite of async processing.
   - I found it possible to use worker threads in Next.js. They are poorly documented, but working well.
 - Optional Azure Automation with Hybrid Worker to handle operations on local AD users.
@@ -62,7 +67,7 @@ Alternatively, this application can be deployed as a Cloud service hosted in Azu
 
 2. Creating a new user account in Entra ID or hybrid local AD at any level of the hierarchy under the supervision of a specific manager.
 
-- <a href="samples/images/5_adding-a-new-azure-ad-user-for-manager.png">This option</a> is available only for users that belong to global Entra ID roles of User Administrator or Global Administrator. Security checks are automatic so regular users cannot see this feature.
+- <a href="samples/images/5_adding-a-new-azure-ad-user-for-manager.png">This option</a> is available only for users that belong to global Entra ID roles of User Administrator or Global Administrator. Security checks are done automatically and regular users cannot see and access this feature.
 - Required fields are minimal and include only First and Last name. The most of other attributes are optional or can be copied from the selected manager.
 - The creator can choose:
   - Account type being created - cloud-only (Entra ID only) or hybrid local AD with sync via AD Connect
