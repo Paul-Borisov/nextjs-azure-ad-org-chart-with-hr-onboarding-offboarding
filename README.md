@@ -24,7 +24,7 @@ This HR onboarding and offboarding web application solves most frequently proble
 - Server-side worker threads (Node.js worker_threads) to support loading optional user images in a non-blocking way.
   - I noticed that Server Actions have specific problems when they handle multiple simultaneous data fetching requests or database mutations.
     - For instance, this is possible to make bulk querying of users from Entra ID and save data to cache such as database "all at once".
-    - However, there is no way to make bulk querying of multiple users' photos. These queries require separate fetch request per each individual photo.
+    - However, there is no way to make bulk querying of multiple users' photos. These queries require a separate fetch request per each individual photo.
     - Cloud services such as Azure Apps limited the max number of simultaneous fetching requests. And, this may cause timeouts (https://github.com/nodejs/undici/issues/1531)
     - This may suspend new requests within the main thread causing undesired delays even though all requests are made in parallel async fetches.
     - Using server side worker_threads in Next.js solves this problem. It eliminates undesired delays in the main thread.
