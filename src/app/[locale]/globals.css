@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 .modal {
   display: flex;
   justify-content: space-evenly;
@@ -18,9 +24,6 @@
 .radix-themes:where([data-is-root-theme="true"]) {
   min-height: fit-content !important;
 }
-/*.super-black {
-  background-color: black;
-}*/
 @media print {
   body {
     color: black !important;

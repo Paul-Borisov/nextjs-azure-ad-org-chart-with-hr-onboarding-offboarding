@@ -1,5 +1,4 @@
 import { DarkTheme, LightTheme } from "@/shared/lib/fluentUIThemes";
-import NewEmployeeForm from "../forms/NewEmployeeForm";
 import {
   FontIcon,
   Panel,
@@ -73,13 +72,14 @@ const SidePanelCreateNewEmployee = ({
       </Panel>
       {/* A trick to suppress undesired content shift to the right when fluent panel opens and body scrollbar disappears. */}
       {/* The class .main is defined in layout.tsx */}
-      {isOpen && Utils.getScrollbarWidth() ? (
+      {/* UPDATE: fixed in a safer way, returned back to overflow-x: hidden in global.css */}
+      {/* {isOpen && Utils.getScrollbarWidth() ? (
         <style
           dangerouslySetInnerHTML={{
             __html: `.main { margin-right: ${Utils.getScrollbarWidth()}px }`,
           }}
         />
-      ) : null}
+      ) : null} */}
     </ThemeProvider>
   );
 };

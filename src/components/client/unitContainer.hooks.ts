@@ -5,7 +5,7 @@ import { IUnit } from "@/shared/interfaces/iUnit";
 import LevelUtils from "@/shared/lib/levelUtils";
 import { PanelContext } from "../contexts/panelContext";
 import { UnitMapper } from "@/shared/mappers/unitMapper";
-import { useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import { useHierarchy } from "./hierarchyContainer.hooks";
 
 export const useUnitContainer = ({
@@ -19,9 +19,9 @@ export const useUnitContainer = ({
   const [newUserData, searchId, searchText] = useHierarchy(data);
   const [newData, setNewData] = useState<IUnit[]>();
 
-  const applyNewData = (newData: IUnit[] | undefined) => {
+  const applyNewData = useCallback((newData: IUnit[] | undefined) => {
     setNewData(newData);
-  };
+  }, []);
 
   const selectedMaxColumns =
     LevelUtils.getSelectedMaxColumns() || defaultColumns.toString();
