@@ -23,6 +23,12 @@ export class UserMapper {
           try {
             //@ts-ignore
             user[levelProperty] = eval(`user.${propertyNameOrPath}`);
+            //Another TS-satisfying solution (looks a bit odd but works)
+            //let user = ...
+            //user = {...user, ...{[levelProperty]: eval(`user.${propertyNameOrPath}`)}}
+            //One more TS-satisfying solution
+            //function setProperty<Type, Key extends keyof Type>(obj: Type, key: Key, value: any) {obj[key] = value;}
+            //setProperty(user, levelProperty as keyof typeof user, eval(`user.${propertyNameOrPath}`))
           } catch (e) {
             console.error(e);
           }
