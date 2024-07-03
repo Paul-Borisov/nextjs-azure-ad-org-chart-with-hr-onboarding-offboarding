@@ -142,7 +142,7 @@ npx prisma generate
 turbo dev
 # Or, just start with npm
 npm run dev
-# In order to compile and run standalone Production version execute
+# In order to compile and run standalone "Production version execute
 npm run build
 # Then remember to update .env and change to DATABASE_URL="file:../../../public/db/.sqlite"
 # Then start your "local Production" server using
@@ -201,6 +201,7 @@ Too slow "Loading ..." phase and the "Warning: cache disabled" is visible above 
 - DB cache is refreshed automatically every hour in default configuration.
 
 Sign-in error "Server error There is a problem with the server configuration. Check the server logs for more information."
+
 - Make sure you have created [Azure App Registration](#getting-started), granted necessary permissions
 - And added values of AZURE_AD_CLIENT_ID, AZURE_AD_CLIENT_SECRET, and AZURE_AD_TENANT_ID in Env-settings, for instance to .env-file
 
