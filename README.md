@@ -200,6 +200,10 @@ Too slow "Loading ..." phase and the "Warning: cache disabled" is visible above 
 - Otherwise, check the database connection string, it can be incorrect (see above).
 - DB cache is refreshed automatically every hour in default configuration.
 
+Sign-in error "Server error There is a problem with the server configuration. Check the server logs for more information."
+- Make sure you have created [Azure App Registration](#getting-started), granted necessary permissions
+- And added values of AZURE_AD_CLIENT_ID, AZURE_AD_CLIENT_SECRET, and AZURE_AD_TENANT_ID in Env-settings, for instance to .env-file
+
 HTTP ERROR 431: cleanup previous authentication cookies from your browser's Application tab. It should resolve the issue.
 
 HTTP ERROR DNS_PROBE_FINISHED_NXDOMAIN: if you run your web app in the cloud environment like Azure App Service,
