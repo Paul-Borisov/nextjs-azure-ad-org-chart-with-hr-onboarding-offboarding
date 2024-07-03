@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2020/02/ProvisioningSchema">
+  <pnp:Preferences Generator="OfficeDevPnP.Core, Version=3.28.2012.0, Culture=neutral, PublicKeyToken=5e633289e95c321a" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-D63800CF78364DA38C7F445AFC066F1B">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-D63800CF78364DA38C7F445AFC066F1B" Version="1" BaseSiteTemplate="STS#0" Scope="Web">
+      <pnp:Lists>
+        <pnp:ListInstance Title="Employee Documents" Description="" DocumentTemplate="{site}/Employee Documents/Forms/template.dotx" OnQuickLaunch="true" TemplateType="101" Url="Employee Documents" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="100" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-e717-4e80-aa17-d0c71b360101" EnableAttachments="false" ListExperience="ClassicExperience" DefaultDisplayFormUrl="{site}/Employee Documents/Forms/DispForm.aspx" DefaultEditFormUrl="{site}/Employee Documents/Forms/EditForm.aspx" DefaultNewFormUrl="{site}/Employee Documents/Forms/Upload.aspx" ImageUrl="/_layouts/15/images/itdl.png?rev=44" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:PropertyBagEntries>
+            <pnp:PropertyBagEntry Key="IsAttachmentLibrary" Value="0" Overwrite="false" />
+          </pnp:PropertyBagEntries>
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x0101" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{3EB73D10-C3B5-4063-A07D-21F66A532D47}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="Active Employees" Url="{site}/Employee Documents/Forms/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/dlicon.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="FileLeafRef" />
+                </OrderBy>
+                <Where>
+                  <Or>
+                    <Eq>
+                      <FieldRef Name="Employee_x003a_Employee_x0020_Main_x0020_Status" />
+                      <Value Type="Text">Active</Value>
+                    </Eq>
+                    <Eq>
+                      <FieldRef Name="ContentType" />
+                      <Value Type="Computed">Folder</Value>
+                    </Eq>
+                  </Or>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Edit" />
+                <FieldRef Name="DocIcon" />
+                <FieldRef Name="LinkFilename" />
+                <FieldRef Name="Modified" />
+                <FieldRef Name="Editor" />
+                <FieldRef Name="Type_x0020_of_x0020_Doc" />
+                <FieldRef Name="Employee" />
+                <FieldRef Name="Employee_x003a_Location_x0020_Post_x0020_Office" />
+                <FieldRef Name="CheckoutUser" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">100</RowLimit>
+              <Aggregations Value="On">
+                <FieldRef Name="LinkFilename" Type="COUNT" />
+              </Aggregations>
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{61205A82-4CE2-4B70-B904-62B5A1F9BAF0}" MobileView="TRUE" Type="HTML" DisplayName="Inactive Employees" Url="{site}/Employee Documents/Forms/Inactive.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/dlicon.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="FileLeafRef" />
+                </OrderBy>
+                <Where>
+                  <Or>
+                    <Neq>
+                      <FieldRef Name="Employee_x003a_Employee_x0020_Main_x0020_Status" />
+                      <Value Type="Text">Active</Value>
+                    </Neq>
+                    <Eq>
+                      <FieldRef Name="ContentType" />
+                      <Value Type="Computed">Folder</Value>
+                    </Eq>
+                  </Or>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Edit" />
+                <FieldRef Name="DocIcon" />
+                <FieldRef Name="LinkFilename" />
+                <FieldRef Name="Modified" />
+                <FieldRef Name="Editor" />
+                <FieldRef Name="Type_x0020_of_x0020_Doc" />
+                <FieldRef Name="Employee" />
+                <FieldRef Name="Employee_x003a_Location_x0020_Post_x0020_Office" />
+                <FieldRef Name="CheckoutUser" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">100</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{2C697C35-D62A-4B2C-B5D2-D9B343453250}" MobileView="TRUE" Type="HTML" DisplayName="All Documents" Url="{site}/Employee Documents/Forms/AllDocuments.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/dlicon.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="FileLeafRef" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="ID" />
+                <FieldRef Name="Edit" />
+                <FieldRef Name="DocIcon" />
+                <FieldRef Name="LinkFilename" />
+                <FieldRef Name="Modified" />
+                <FieldRef Name="Editor" />
+                <FieldRef Name="Type_x0020_of_x0020_Doc" />
+                <FieldRef Name="Employee" />
+                <FieldRef Name="Employee_x003a_Location_x0020_Post_x0020_Office" />
+                <FieldRef Name="CheckoutUser" />
+                <FieldRef Name="Employee_x003a_Employee_x0020_ID" />
+                <FieldRef Name="Employee_x003a_Employee_x0020_Main_x0020_Status" />
+                <FieldRef Name="Created" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">100</RowLimit>
+              <Aggregations Value="On">
+                <FieldRef Name="LinkFilename" Type="COUNT" />
+              </Aggregations>
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field Type="Note" DisplayName="Image Tags_0" StaticName="lcf76f155ced4ddcb4097134ff3c332f" Name="lcf76f155ced4ddcb4097134ff3c332f" ID="{7c51d632-27e0-f6f7-a5d6-ed67b68bd369}" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" ColName="ntext7" RowOrdinal="0" />
+            <Field Type="Boolean" DisplayName="NameUnique" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{c151229e-4501-4211-aa1c-2e75a814a34d}" SourceID="{{listid:Employee Documents}}" StaticName="NameUnique" Name="NameUnique" ColName="bit2" RowOrdinal="0">
+              <Default>0</Default>
+            </Field>
+            <Field DisplayName="DFFS Loader by SPJSBlog.com" Name="DFFS_Loader" Group="SPJSBlog.com" Type="Text" Description="Add this field to activate the DFFS feature." Direction="%7B%22fieldValidatonMsg%22%3A%22%22%2C%22configListBaseUrl%22%3A%22%7Bcurrentsite%7D%22%2C%22vLookupConfigListBaseUrl%22%3A%22%7Bcurrentsite%7D%22%2C%22rmConfigListBaseUrl%22%3A%22%7Bcurrentsite%7D%22%2C%22formTypeSwitchField%22%3A%22%22%2C%22license%22%3A%22mtiAxvdHWNpsmYwmt166N2-UnKqVegAtO6jC8850-BzIsewgaE1fm4QtrvfzFat7FX7tvZcltZze9zj6qXhrWwzIGPh97lCDdTtTNCt0D4EbUdNlthA2NY3iZWCYYI1PKg01TjZHBxkGNaT99aVyABYNPMoB79xGOqFGZPUu801lKlJXIfC2zq11IyWNqLa6MMB11CfCZPss1Esy01i7ZFxoMFyNW01YFHrGWYAK4D11irXsmdxPB7Ed9nXzwPIbFPoA77FesTwuFpecF23NgQacvRPikk08SZIrevJ3DgcM8-mpMXEClgUd4x9EWPOXyXYKD5A0fERcQxfsKiP51ExoGjogRsp5F2SyqYofMoNM5u3prBDiblMtkU54IDfdOHmJBCu55iCoVhfjlLM5y6NWkZCvbXIpr45bcbGxjvdMLb49lQcCkKMvjg5X0TkTOcMYfG5wA1tkgEZbzf5OEK2wsXowfcabB4N5XERiWPQZzzp53kpNPziBmwoV54bRlyfwRci5GI5fLiVzUxVpY5E6YXJIEGkGkqw45bUOcGRtNotO57mzsCwyuNfH4D9BlTEfrbz4xxO8PjRSHnnCbG4i9KqdvSziKzR4l5fzgnRIwOXb4c9OsoSnkBXduF50RyYSXUNgna5X1IAxTspXCX5hZ2gzIfwUrpTok53RyMUyTBVCNd54qVBUvtJIsK5B5xqCrb5zFHRCe6DvRxjNINHTy57dzJnjUPLHK4s9zyDQHQtsSSQ48gUeDULoIvCi49%22%2C%22scope%22%3A%22site%22%2C%22customFileLocation%22%3A%22%22%2C%22plugins%22%3A%5B%22utility%22%2C%22vLookup%22%2C%22rm%22%5D%2C%22customPlugins%22%3A%22%22%7D" ShowInFileDlg="FALSE" ShowInViewForms="FALSE" ShowInVersionHistory="FALSE" ID="{7eefbcb6-3e5e-43a4-8ffc-7ad73a139866}" SourceID="{6127c33f-315e-4e54-a280-927ca4a0f037}" StaticName="DFFS_Loader" JSLink="~site/SPJS/DFFS/jslink/DFFS_JSLink.js" Version="1" ColName="nvarchar1" RowOrdinal="0" />
+            <Field Type="Choice" DisplayName="Type of Doc" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="Dropdown" FillInChoice="FALSE" ID="{9f48bffa-d200-4bfc-b3e2-66bb25ce4d63}" SourceID="{{listid:Employee Documents}}" StaticName="Type_x0020_of_x0020_Doc" Name="Type_x0020_of_x0020_Doc" ColName="nvarchar2" RowOrdinal="0" CustomFormatter="" Version="9">
+              <CHOICES>
+                <CHOICE>Onboarding - Checklist - New employee</CHOICE>
+                <CHOICE>Onboarding - Checklist - HSE</CHOICE>
+                <CHOICE>Employment  contract</CHOICE>
+                <CHOICE>Offboarding</CHOICE>
+                <CHOICE>Leave of absence</CHOICE>
+                <CHOICE>Other</CHOICE>
+                <CHOICE>CV</CHOICE>
+                <CHOICE>Special permission</CHOICE>
+                <CHOICE>Course certificates and certificates</CHOICE>
+                <CHOICE>Onboarding - Non-Disclosure Agreement</CHOICE>
+                <CHOICE>Registration of health-hazardous exposure</CHOICE>
+                <CHOICE>Sick leave</CHOICE>
+              </CHOICES>
+              <Default>Other</Default>
+            </Field>
+            <Field Type="Text" DisplayName="IWSAPHistory" Name="IWSAPHistory" Hidden="FALSE" ShowInDisplayForm="FALSE" ShowInEditForm="FALSE" ShowInNewForm="FALSE" ShowInFileDlg="FALSE" ShowInListSettings="FALSE" ShowInVersionHistory="FALSE" ShowInViewForms="FALSE" ID="{dc569069-db4b-49a0-83c5-9cdcdd86b0eb}" SourceID="{{listid:Employee Documents}}" StaticName="IWSAPHistory" ColName="nvarchar3" RowOrdinal="0" Version="1" />
+            <Field Type="Lookup" DisplayName="Employee" Required="FALSE" EnforceUniqueValues="FALSE" List="{listid:Employee List}" ShowField="Display_x0020_Name" UnlimitedLengthInDocumentLibrary="FALSE" RelationshipDeleteBehavior="None" ID="{6bdc3b1a-678f-4e3e-85fa-cc54693c1d62}" SourceID="{{listid:Employee Documents}}" StaticName="Employee" Name="Employee" ColName="int1" RowOrdinal="0" Group="" Version="7" Indexed="TRUE" />
+            <Field Type="Lookup" DisplayName="Employee:Location Post Office" List="{listid:Employee List}" WebId="{siteid}" ShowField="PostOffice" FieldRef="6bdc3b1a-678f-4e3e-85fa-cc54693c1d62" ReadOnly="TRUE" UnlimitedLengthInDocumentLibrary="FALSE" ID="{0d2c6081-91f9-4dce-98f5-ef1b257789dd}" SourceID="{{listid:Employee Documents}}" StaticName="Employee_x003a_Location_x0020_Post_x0020_Office" Name="Employee_x003a_Location_x0020_Post_x0020_Office" Version="4" Group="Custom Columns" />
+            <Field ID="{cb19284a-cde7-4570-a980-1dab8bd74470}" Type="Note" Name="_ExtendedDescription" DisplayName="Description" DisplaceOnUpgrade="TRUE" ShowInEditForm="FALSE" Indexed="FALSE" RichText="TRUE" RichTextMode="Compatible" CanToggleHidden="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="_ExtendedDescription" ColName="ntext5" />
+            <Field ID="{67aff0cf-8e19-43f2-9987-be89075e1467}" Type="Note" DisplayName="Extracted Text" Name="MediaServiceOCR" Group="_Hidden" Hidden="FALSE" Sealed="TRUE" ReadOnly="TRUE" ShowInNewForm="FALSE" ShowInDisplayForm="FALSE" ShowInEditForm="FALSE" ShowInListSettings="FALSE" Viewable="FALSE" Json="FALSE" SourceID="{{listid:Employee Documents}}" StaticName="MediaServiceOCR" ColName="ntext6" RowOrdinal="0" />
+            <Field Type="Lookup" DisplayName="Employee:Employee ID" List="{listid:Employee List}" WebId="{siteid}" ShowField="Title" FieldRef="6bdc3b1a-678f-4e3e-85fa-cc54693c1d62" ReadOnly="TRUE" UnlimitedLengthInDocumentLibrary="FALSE" ID="{bbd87347-49c6-4a47-b433-7129851b9b3e}" SourceID="{{listid:Employee Documents}}" StaticName="Employee_x003a_Employee_x0020_ID" Name="Employee_x003a_Employee_x0020_ID" Version="3" Group="Custom Columns" />
+            <Field Type="Lookup" DisplayName="Employee:Employee Main Status" List="{listid:Employee List}" WebId="{siteid}" ShowField="EmployeeMainStatusText" FieldRef="6bdc3b1a-678f-4e3e-85fa-cc54693c1d62" ReadOnly="TRUE" UnlimitedLengthInDocumentLibrary="FALSE" ID="{64e60cc1-c2ad-4a65-961f-34fccbc21ce8}" SourceID="{{listid:Employee Documents}}" StaticName="Employee_x003a_Employee_x0020_Main_x0020_Status" Name="Employee_x003a_Employee_x0020_Main_x0020_Status" Version="2" Group="Custom Columns" />
+            <Field ID="{5cf76f15-5ced-4ddc-b409-7134ff3c332f}" Type="TaxonomyFieldTypeMulti" DisplayName="Image Tags" Name="MediaServiceImageTags" Group="_Hidden" Hidden="FALSE" Sealed="TRUE" ReadOnly="FALSE" ShowInNewForm="TRUE" ShowInDisplayForm="TRUE" ShowInEditForm="TRUE" ShowInListSettings="FALSE" Viewable="FALSE" Json="FALSE" SourceID="{{listid:Employee Documents}}" StaticName="MediaServiceImageTags" ColName="int2" RowOrdinal="0" List="{listid:TaxonomyHiddenList}" WebId="c34ff47a-b4f6-49a3-bc4c-4af5b05bcc17" ShowField="Term1033" Version="6" Mult="TRUE" Sortable="FALSE" AllowDeletion="FALSE" Description="">
+              <Customization>
+                <ArrayOfProperty>
+                  <Property>
+                    <Name>SspId</Name>
+                    <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+                  </Property>
+                  <Property>
+                    <Name>GroupId</Name>
+                  </Property>
+                  <Property>
+                    <Name>TermSetId</Name>
+                    <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:System:Image Tags}</Value>
+                  </Property>
+                  <Property>
+                    <Name>AnchorId</Name>
+                    <Value xmlns:q3="http://www.w3.org/2001/XMLSchema" p4:type="q3:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">fba54fb3-c3e1-fe81-a776-ca4b69148c4d</Value>
+                  </Property>
+                  <Property>
+                    <Name>UserCreated</Name>
+                    <Value xmlns:q4="http://www.w3.org/2001/XMLSchema" p4:type="q4:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>Open</Name>
+                    <Value xmlns:q5="http://www.w3.org/2001/XMLSchema" p4:type="q5:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">true</Value>
+                  </Property>
+                  <Property>
+                    <Name>TextField</Name>
+                    <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{7c51d632-27e0-f6f7-a5d6-ed67b68bd369}</Value>
+                  </Property>
+                  <Property>
+                    <Name>IsPathRendered</Name>
+                    <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>IsKeyword</Name>
+                    <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>TargetTemplate</Name>
+                  </Property>
+                  <Property>
+                    <Name>CreateValuesInEditForm</Name>
+                    <Value xmlns:q9="http://www.w3.org/2001/XMLSchema" p4:type="q9:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">true</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterAssemblyStrongName</Name>
+                    <Value xmlns:q10="http://www.w3.org/2001/XMLSchema" p4:type="q10:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">Microsoft.SharePoint.Taxonomy, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterClassName</Name>
+                    <Value xmlns:q11="http://www.w3.org/2001/XMLSchema" p4:type="q11:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">Microsoft.SharePoint.Taxonomy.TaxonomyField</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterMethodName</Name>
+                    <Value xmlns:q12="http://www.w3.org/2001/XMLSchema" p4:type="q12:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">GetFilteringHtml</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterJavascriptProperty</Name>
+                    <Value xmlns:q13="http://www.w3.org/2001/XMLSchema" p4:type="q13:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">FilteringJavascript</Value>
+                  </Property>
+                </ArrayOfProperty>
+              </Customization>
+            </Field>
+            <Field ID="{76d13cd2-1bae-45a5-8b74-545b87b65037}" Name="_ColorTag" DisplaceOnUpgrade="TRUE" ShowInFileDlg="FALSE" ReadOnly="TRUE" Type="Text" DisplayName="Color Tag" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="_ColorTag" FromBaseType="TRUE" ColName="nvarchar19" />
+          </pnp:Fields>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="ef991a83-108d-4407-8ee5-ccc0c3d836b9" Name="SharedWithUsers" DisplayName="Shared With" />
+            <pnp:FieldRef ID="d3c9caf7-044c-4c71-ae64-092981e54b33" Name="SharedWithDetails" DisplayName="Shared With Details" />
+            <pnp:FieldRef ID="d307dff3-340f-44a2-9f4b-fbfe1ba07459" Name="_CommentCount" DisplayName="Comment count" />
+            <pnp:FieldRef ID="db8d9d6d-dc9a-4fbd-85f3-4a753bfdc58c" Name="_LikeCount" DisplayName="Like count" />
+          </pnp:FieldRefs>
+        </pnp:ListInstance>
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>

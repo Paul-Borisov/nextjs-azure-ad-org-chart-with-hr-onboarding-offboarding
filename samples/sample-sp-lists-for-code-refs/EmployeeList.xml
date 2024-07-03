@@ -1,0 +1,1603 @@
+<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2020/02/ProvisioningSchema">
+  <pnp:Preferences Generator="OfficeDevPnP.Core, Version=3.28.2012.0, Culture=neutral, PublicKeyToken=5e633289e95c321a" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-5304EF62C343428AB111069E319759EC">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-5304EF62C343428AB111069E319759EC" Version="1" BaseSiteTemplate="STS#0" Scope="Web">
+      <pnp:Lists>
+        <pnp:ListInstance Title="Employee List" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/Employee List" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="50" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" ContentTypesEnabled="true" EnableFolderCreation="false" ListExperience="ClassicExperience" DefaultDisplayFormUrl="{site}/Lists/Employee List/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Employee List/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Employee List/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=44" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{73CF7BD6-BA70-4ED2-80DE-032A5C5EC87C}" MobileView="TRUE" Type="HTML" DisplayName="Show All Items" Url="{site}/Lists/Employee List/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy Override="TRUE">
+                  <FieldRef Name="Last_x0020_Name" />
+                  <FieldRef Name="First_x0020_Name" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Edit" />
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="Last_x0020_Name" />
+                <FieldRef Name="First_x0020_Name" />
+                <FieldRef Name="Display_x0020_Name" />
+                <FieldRef Name="ItUser" />
+                <FieldRef Name="Sharepoint_x0020_ID" />
+                <FieldRef Name="Job_x0020_Title" />
+                <FieldRef Name="JobTitleLocal" />
+                <FieldRef Name="Reports_x0020_to" />
+                <FieldRef Name="Work_x0020_Email" />
+                <FieldRef Name="Work_x0020_Phone" />
+                <FieldRef Name="Mobile_x0020_Phone" />
+                <FieldRef Name="EmployeeMainStatusText" />
+                <FieldRef Name="EStatus" />
+                <FieldRef Name="EmployeeCategoryText" />
+                <FieldRef Name="Employee_x0020_Type" />
+                <FieldRef Name="Location" />
+                <FieldRef Name="StreetAddress" />
+                <FieldRef Name="Zip_x0020_Code" />
+                <FieldRef Name="PostOffice" />
+                <FieldRef Name="Country" />
+                <FieldRef Name="Company" />
+                <FieldRef Name="OrgUnitText" />
+                <FieldRef Name="DepartmentText" />
+                <FieldRef Name="TeamText" />
+                <FieldRef Name="DottedLineAffiliation" />
+                <FieldRef Name="DottedLineOrgUnitText" />
+                <FieldRef Name="DottedLineDepartmentText" />
+                <FieldRef Name="GtDottedLineManager" />
+                <FieldRef Name="DottedLineTeamText" />
+                <FieldRef Name="Date_x0020_of_x0020_Hire" />
+                <FieldRef Name="Date_x0020_of_x0020_Exit" />
+                <FieldRef Name="Modified" />
+                <FieldRef Name="Date_x0020_of_x0020_Birth" />
+                <FieldRef Name="Editor" />
+                <FieldRef Name="ID" />
+                <FieldRef Name="OrgAffiliation" />
+                <FieldRef Name="HomeCountry" />
+                <FieldRef Name="PercentagePosition" />
+                <FieldRef Name="Created" />
+                <FieldRef Name="Attachments" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">100</RowLimit>
+              <Aggregations Value="On">
+                <FieldRef Name="EStatus" Type="COUNT" />
+              </Aggregations>
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{0ABAC28A-4765-4359-926D-54FB72B72DFA}" MobileView="TRUE" Type="HTML" DisplayName="Performance-Appraisal" Url="{site}/Lists/Employee List/PerformanceAppraisal.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="ID" />
+                </OrderBy>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="EStatus" />
+                    <Value Type="Text">Active</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Edit" />
+                <FieldRef Name="First_x0020_Name" />
+                <FieldRef Name="Last_x0020_Name" />
+                <FieldRef Name="Display_x0020_Name" />
+                <FieldRef Name="Job_x0020_Title" />
+                <FieldRef Name="JobTitleLocal" />
+                <FieldRef Name="Date_x0020_of_x0020_Last_x0020_R" />
+                <FieldRef Name="Next_x0020_Review_x0020_Date" />
+                <FieldRef Name="Current_x0020_Review_x002f_Appra" />
+                <FieldRef Name="Reports_x0020_to" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{E9B7F978-E3FD-4C98-8D03-A68CBDF49B97}" Type="GRID" DisplayName="Upcoming Reviews" Url="{site}/Lists/Employee List/Upcoming Reviews.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="EStatus" />
+                    <Value Type="Text">Active</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Start_x0020_New_x0020_Review" />
+                <FieldRef Name="Edit" />
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="Display_x0020_Name" />
+                <FieldRef Name="Job_x0020_Title" />
+                <FieldRef Name="JobTitleLocal" />
+                <FieldRef Name="Reports_x0020_to" />
+                <FieldRef Name="Date_x0020_of_x0020_Last_x0020_R" />
+                <FieldRef Name="Next_x0020_Review_x0020_Date" />
+                <FieldRef Name="Current_x0020_Review_x002f_Appra" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{6731B7F1-54E1-4346-9731-6A3926300FF3}" MobileView="TRUE" Type="HTML" DisplayName="Dashboard Metrics" Url="{site}/Lists/Employee List/Dashboard Metrics.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="EStatus" />
+                    <Value Type="Text">Active</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Display_x0020_Name" />
+                <FieldRef Name="Review_x0020_Rating" />
+                <FieldRef Name="Current_x0020_Review_x002f_Appra" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{B92F3562-AE43-4AD3-AF35-B0154E9C049A}" MobileView="TRUE" Type="HTML" DisplayName="By Department" Url="{site}/Lists/Employee List/Departments.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <GroupBy Collapse="TRUE" GroupLimit="30">
+                  <FieldRef Name="DepartmentText" />
+                </GroupBy>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="EStatus" />
+                    <Value Type="Text">Active</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Display_x0020_Name" />
+                <FieldRef Name="Job_x0020_Title" />
+                <FieldRef Name="JobTitleLocal" />
+                <FieldRef Name="Reports_x0020_to" />
+                <FieldRef Name="Current_x0020_Review_x002f_Appra" />
+                <FieldRef Name="Date_x0020_of_x0020_Last_x0020_R" />
+                <FieldRef Name="Location" />
+                <FieldRef Name="Country" />
+                <FieldRef Name="Post_x0020_Office_x0020_Box" />
+                <FieldRef Name="PostOffice" />
+                <FieldRef Name="Zip_x0020_Code" />
+                <FieldRef Name="StreetAddress" />
+                <FieldRef Name="Company" />
+                <FieldRef Name="OrgUnitText" />
+                <FieldRef Name="DepartmentText" />
+                <FieldRef Name="TeamText" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{E4F12AF4-FF89-49B5-BAE1-7FF9CF905174}" MobileView="TRUE" Type="HTML" DisplayName="By Role" Url="{site}/Lists/Employee List/Department Role.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="EStatus" />
+                    <Value Type="Text">Active</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Display_x0020_Name" />
+                <FieldRef Name="Job_x0020_Title" />
+                <FieldRef Name="JobTitleLocal" />
+                <FieldRef Name="Reports_x0020_to" />
+                <FieldRef Name="Current_x0020_Review_x002f_Appra" />
+                <FieldRef Name="Date_x0020_of_x0020_Last_x0020_R" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{90284712-DBA7-4F54-BA77-5998A119713C}" MobileView="TRUE" Type="HTML" DisplayName="Current Review/Appraisal" Url="{site}/Lists/Employee List/By Current ReviewAppraisal.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <GroupBy Collapse="TRUE" GroupLimit="30">
+                  <FieldRef Name="Current_x0020_Review_x002f_Appra" />
+                </GroupBy>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="EStatus" />
+                    <Value Type="Text">Active</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Edit" />
+                <FieldRef Name="Display_x0020_Name" />
+                <FieldRef Name="Current_x0020_Review_x002f_Appra" />
+                <FieldRef Name="Date_x0020_of_x0020_Last_x0020_R" />
+                <FieldRef Name="Last_x0020_Salary_x0020_Change_x" />
+                <FieldRef Name="Last_x0020_Salary_x0020_Change_x0" />
+                <FieldRef Name="Hourly_x0020_Rate" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{C6981E09-B2CC-4934-88BB-6E39F41DEFCC}" MobileView="TRUE" Type="HTML" DisplayName="Policy Management Groups" Url="{site}/Lists/Employee List/Policy Management Groups.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy Override="TRUE">
+                  <FieldRef Name="Last_x0020_Name" />
+                  <FieldRef Name="First_x0020_Name" />
+                </OrderBy>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="EStatus" />
+                    <Value Type="Text">Active</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="PGS" />
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="Last_x0020_Name" />
+                <FieldRef Name="First_x0020_Name" />
+                <FieldRef Name="Sharepoint_x0020_ID" />
+                <FieldRef Name="Reports_x0020_to" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{91F1B0ED-B2A3-4AA5-ABF0-C1BFB5E86ABE}" MobileView="TRUE" Type="HTML" DisplayName="My Employee Profiles" Url="{site}/Lists/Employee List/My Employee Profiles.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <Where>
+                  <And>
+                    <Or>
+                      <Eq>
+                        <FieldRef Name="Sharepoint_x0020_ID" />
+                        <Value Type="Integer">
+                          <UserID Type="Integer" />
+                        </Value>
+                      </Eq>
+                      <Eq>
+                        <FieldRef Name="Reports_x0020_to" />
+                        <Value Type="Integer">
+                          <UserID Type="Integer" />
+                        </Value>
+                      </Eq>
+                    </Or>
+                    <Eq>
+                      <FieldRef Name="EStatus" />
+                      <Value Type="Text">Active</Value>
+                    </Eq>
+                  </And>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Edit" />
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="Display_x0020_Name" />
+                <FieldRef Name="Job_x0020_Title" />
+                <FieldRef Name="JobTitleLocal" />
+                <FieldRef Name="Reports_x0020_to" />
+                <FieldRef Name="Hire_x0020_Date" />
+                <FieldRef Name="Mobile_x0020_Phone" />
+                <FieldRef Name="Next_x0020_Review" />
+                <FieldRef Name="Next_x0020_Review_x0020_Date" />
+                <FieldRef Name="Sharepoint_x0020_ID" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{D91BFDE1-77E3-4551-8C66-B6D7FA9F830F}" MobileView="TRUE" Type="HTML" DisplayName="My Performance -Appraisal" Url="{site}/Lists/Employee List/My Performance Appraisal.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="ID" />
+                </OrderBy>
+                <Where>
+                  <And>
+                    <Eq>
+                      <FieldRef Name="Reports_x0020_to" />
+                      <Value Type="Integer">
+                        <UserID Type="Integer" />
+                      </Value>
+                    </Eq>
+                    <Eq>
+                      <FieldRef Name="EStatus" />
+                      <Value Type="Text">Active</Value>
+                    </Eq>
+                  </And>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Edit" />
+                <FieldRef Name="First_x0020_Name" />
+                <FieldRef Name="Last_x0020_Name" />
+                <FieldRef Name="Display_x0020_Name" />
+                <FieldRef Name="Job_x0020_Title" />
+                <FieldRef Name="JobTitleLocal" />
+                <FieldRef Name="Date_x0020_of_x0020_Last_x0020_R" />
+                <FieldRef Name="Next_x0020_Review_x0020_Date" />
+                <FieldRef Name="Review_x0020_Rating" />
+                <FieldRef Name="Current_x0020_Review_x002f_Appra" />
+                <FieldRef Name="Reports_x0020_to" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{8BF4649C-63FF-4A35-93D9-7512E646EEA9}" MobileView="TRUE" Type="HTML" DisplayName="By Location" Url="{site}/Lists/Employee List/ByLocation.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <GroupBy Collapse="TRUE" GroupLimit="30">
+                  <FieldRef Name="Location" />
+                </GroupBy>
+                <OrderBy Override="TRUE">
+                  <FieldRef Name="Last_x0020_Name" />
+                  <FieldRef Name="First_x0020_Name" />
+                </OrderBy>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="EStatus" />
+                    <Value Type="Text">Active</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Edit" />
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="First_x0020_Name" />
+                <FieldRef Name="Last_x0020_Name" />
+                <FieldRef Name="Sharepoint_x0020_ID" />
+                <FieldRef Name="Job_x0020_Title" />
+                <FieldRef Name="JobTitleLocal" />
+                <FieldRef Name="Reports_x0020_to" />
+                <FieldRef Name="Work_x0020_Email" />
+                <FieldRef Name="Work_x0020_Phone" />
+                <FieldRef Name="Mobile_x0020_Phone" />
+                <FieldRef Name="EmployeeMainStatusText" />
+                <FieldRef Name="EStatus" />
+                <FieldRef Name="EmployeeCategoryText" />
+                <FieldRef Name="Employee_x0020_Type" />
+                <FieldRef Name="Location" />
+                <FieldRef Name="StreetAddress" />
+                <FieldRef Name="Zip_x0020_Code" />
+                <FieldRef Name="PostOffice" />
+                <FieldRef Name="Country" />
+                <FieldRef Name="Company" />
+                <FieldRef Name="OrgUnitText" />
+                <FieldRef Name="DepartmentText" />
+                <FieldRef Name="TeamText" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="On">
+                <FieldRef Name="EStatus" Type="COUNT" />
+              </Aggregations>
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{D6B512F3-4BA2-4AA8-A983-A831B4C2DC9D}" MobileView="TRUE" Type="HTML" DisplayName="By Organizational Unit" Url="{site}/Lists/Employee List/ByOrgUnit.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <GroupBy Collapse="TRUE" GroupLimit="30">
+                  <FieldRef Name="OrgUnitText" />
+                </GroupBy>
+                <OrderBy Override="TRUE">
+                  <FieldRef Name="Last_x0020_Name" />
+                  <FieldRef Name="First_x0020_Name" />
+                </OrderBy>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="EStatus" />
+                    <Value Type="Text">Active</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Edit" />
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="First_x0020_Name" />
+                <FieldRef Name="Last_x0020_Name" />
+                <FieldRef Name="Sharepoint_x0020_ID" />
+                <FieldRef Name="Job_x0020_Title" />
+                <FieldRef Name="JobTitleLocal" />
+                <FieldRef Name="Reports_x0020_to" />
+                <FieldRef Name="Work_x0020_Email" />
+                <FieldRef Name="Work_x0020_Phone" />
+                <FieldRef Name="Mobile_x0020_Phone" />
+                <FieldRef Name="EmployeeMainStatusText" />
+                <FieldRef Name="EStatus" />
+                <FieldRef Name="EmployeeCategoryText" />
+                <FieldRef Name="Employee_x0020_Type" />
+                <FieldRef Name="Location" />
+                <FieldRef Name="StreetAddress" />
+                <FieldRef Name="Zip_x0020_Code" />
+                <FieldRef Name="PostOffice" />
+                <FieldRef Name="Country" />
+                <FieldRef Name="Company" />
+                <FieldRef Name="OrgUnitText" />
+                <FieldRef Name="DepartmentText" />
+                <FieldRef Name="TeamText" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="On">
+                <FieldRef Name="EStatus" Type="COUNT" />
+              </Aggregations>
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{CADB212D-5EE2-4E6C-829B-326D19151145}" MobileView="TRUE" Type="HTML" DisplayName="By Company" Url="{site}/Lists/Employee List/ByCompany.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <GroupBy Collapse="TRUE" GroupLimit="30">
+                  <FieldRef Name="Company" />
+                </GroupBy>
+                <OrderBy Override="TRUE">
+                  <FieldRef Name="Last_x0020_Name" />
+                  <FieldRef Name="First_x0020_Name" />
+                </OrderBy>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="EStatus" />
+                    <Value Type="Text">Active</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Edit" />
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="First_x0020_Name" />
+                <FieldRef Name="Last_x0020_Name" />
+                <FieldRef Name="Sharepoint_x0020_ID" />
+                <FieldRef Name="Job_x0020_Title" />
+                <FieldRef Name="JobTitleLocal" />
+                <FieldRef Name="Reports_x0020_to" />
+                <FieldRef Name="Work_x0020_Email" />
+                <FieldRef Name="Work_x0020_Phone" />
+                <FieldRef Name="Mobile_x0020_Phone" />
+                <FieldRef Name="EmployeeMainStatusText" />
+                <FieldRef Name="EStatus" />
+                <FieldRef Name="EmployeeCategoryText" />
+                <FieldRef Name="Employee_x0020_Type" />
+                <FieldRef Name="Location" />
+                <FieldRef Name="StreetAddress" />
+                <FieldRef Name="Zip_x0020_Code" />
+                <FieldRef Name="PostOffice" />
+                <FieldRef Name="Country" />
+                <FieldRef Name="Company" />
+                <FieldRef Name="OrgUnitText" />
+                <FieldRef Name="TeamText" />
+                <FieldRef Name="DepartmentText" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="On">
+                <FieldRef Name="EStatus" Type="COUNT" />
+              </Aggregations>
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{30C031E5-E0C2-4EC7-BE2C-9084068FE579}" MobileView="TRUE" Type="HTML" DisplayName="By Country" Url="{site}/Lists/Employee List/ByCountry.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <GroupBy Collapse="TRUE" GroupLimit="30">
+                  <FieldRef Name="Country" />
+                </GroupBy>
+                <OrderBy Override="TRUE">
+                  <FieldRef Name="Last_x0020_Name" />
+                  <FieldRef Name="First_x0020_Name" />
+                </OrderBy>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="EStatus" />
+                    <Value Type="Text">Active</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Edit" />
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="First_x0020_Name" />
+                <FieldRef Name="Last_x0020_Name" />
+                <FieldRef Name="Sharepoint_x0020_ID" />
+                <FieldRef Name="Job_x0020_Title" />
+                <FieldRef Name="JobTitleLocal" />
+                <FieldRef Name="Reports_x0020_to" />
+                <FieldRef Name="Work_x0020_Email" />
+                <FieldRef Name="Work_x0020_Phone" />
+                <FieldRef Name="Mobile_x0020_Phone" />
+                <FieldRef Name="EmployeeMainStatusText" />
+                <FieldRef Name="EStatus" />
+                <FieldRef Name="EmployeeCategoryText" />
+                <FieldRef Name="Employee_x0020_Type" />
+                <FieldRef Name="Location" />
+                <FieldRef Name="StreetAddress" />
+                <FieldRef Name="Zip_x0020_Code" />
+                <FieldRef Name="PostOffice" />
+                <FieldRef Name="Country" />
+                <FieldRef Name="Company" />
+                <FieldRef Name="OrgUnitText" />
+                <FieldRef Name="DepartmentText" />
+                <FieldRef Name="TeamText" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="On">
+                <FieldRef Name="EStatus" Type="COUNT" />
+              </Aggregations>
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{60833782-0CFF-4654-AD56-A83621EFD30A}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="General" Url="{site}/Lists/Employee List/General.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy Override="TRUE">
+                  <FieldRef Name="Last_x0020_Name" />
+                  <FieldRef Name="First_x0020_Name" />
+                </OrderBy>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="EStatus" />
+                    <Value Type="Text">Active</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="Last_x0020_Name" />
+                <FieldRef Name="First_x0020_Name" />
+                <FieldRef Name="Display_x0020_Name" />
+                <FieldRef Name="Job_x0020_Title" />
+                <FieldRef Name="JobTitleLocal" />
+                <FieldRef Name="EmployeeMainStatusText" />
+                <FieldRef Name="EStatus" />
+                <FieldRef Name="EmployeeCategoryText" />
+                <FieldRef Name="Employee_x0020_Type" />
+                <FieldRef Name="Date_x0020_of_x0020_Hire" />
+                <FieldRef Name="Date_x0020_of_x0020_Exit" />
+                <FieldRef Name="Date_x0020_of_x0020_Birth" />
+                <FieldRef Name="Sharepoint_x0020_ID" />
+                <FieldRef Name="Drivers_x0020_License" />
+                <FieldRef Name="Company" />
+                <FieldRef Name="Location" />
+                <FieldRef Name="StreetAddress" />
+                <FieldRef Name="PostOffice" />
+                <FieldRef Name="Zip_x0020_Code" />
+                <FieldRef Name="Country" />
+                <FieldRef Name="Post_x0020_Office_x0020_Box" />
+                <FieldRef Name="OrgUnitText" />
+                <FieldRef Name="DepartmentText" />
+                <FieldRef Name="TeamText" />
+                <FieldRef Name="Reports_x0020_to" />
+                <FieldRef Name="DottedLineOrgUnitText" />
+                <FieldRef Name="DottedLineDepartmentText" />
+                <FieldRef Name="DottedLineTeamText" />
+                <FieldRef Name="GtDottedLineManager" />
+                <FieldRef Name="GtInCountryManager" />
+                <FieldRef Name="Work_x0020_Email" />
+                <FieldRef Name="Work_x0020_Phone" />
+                <FieldRef Name="Mobile_x0020_Phone" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">100</RowLimit>
+              <Aggregations Value="On">
+                <FieldRef Name="EStatus" Type="COUNT" />
+              </Aggregations>
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{B64543E3-B643-4A2A-ABC6-E1B58B30BD69}" MobileView="TRUE" Type="HTML" DisplayName="Inactive Employees" Url="{site}/Lists/Employee List/Inactive Employees.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy Override="TRUE">
+                  <FieldRef Name="Last_x0020_Name" />
+                  <FieldRef Name="First_x0020_Name" />
+                </OrderBy>
+                <Where>
+                  <Neq>
+                    <FieldRef Name="EStatus" />
+                    <Value Type="Text">Active</Value>
+                  </Neq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="Last_x0020_Name" />
+                <FieldRef Name="First_x0020_Name" />
+                <FieldRef Name="Display_x0020_Name" />
+                <FieldRef Name="Job_x0020_Title" />
+                <FieldRef Name="JobTitleLocal" />
+                <FieldRef Name="EmployeeMainStatusText" />
+                <FieldRef Name="EStatus" />
+                <FieldRef Name="EmployeeCategoryText" />
+                <FieldRef Name="Employee_x0020_Type" />
+                <FieldRef Name="Date_x0020_of_x0020_Hire" />
+                <FieldRef Name="Date_x0020_of_x0020_Exit" />
+                <FieldRef Name="Date_x0020_of_x0020_Birth" />
+                <FieldRef Name="Sharepoint_x0020_ID" />
+                <FieldRef Name="Drivers_x0020_License" />
+                <FieldRef Name="Company" />
+                <FieldRef Name="Location" />
+                <FieldRef Name="StreetAddress" />
+                <FieldRef Name="PostOffice" />
+                <FieldRef Name="Zip_x0020_Code" />
+                <FieldRef Name="Country" />
+                <FieldRef Name="Post_x0020_Office_x0020_Box" />
+                <FieldRef Name="OrgUnitText" />
+                <FieldRef Name="DepartmentText" />
+                <FieldRef Name="TeamText" />
+                <FieldRef Name="Reports_x0020_to" />
+                <FieldRef Name="DottedLineOrgUnitText" />
+                <FieldRef Name="DottedLineDepartmentText" />
+                <FieldRef Name="DottedLineTeamText" />
+                <FieldRef Name="GtDottedLineManager" />
+                <FieldRef Name="GtInCountryManager" />
+                <FieldRef Name="Work_x0020_Email" />
+                <FieldRef Name="Work_x0020_Phone" />
+                <FieldRef Name="Mobile_x0020_Phone" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">100</RowLimit>
+              <Aggregations Value="On">
+                <FieldRef Name="EStatus" Type="COUNT" />
+              </Aggregations>
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{301F0366-488B-4C36-BE4A-F908B48893D5}" MobileView="TRUE" Type="HTML" DisplayName="Active Employees" Url="{site}/Lists/Employee List/Active Employees.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy Override="TRUE">
+                  <FieldRef Name="Last_x0020_Name" />
+                  <FieldRef Name="First_x0020_Name" />
+                </OrderBy>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="EmployeeMainStatusText" />
+                    <Value Type="Text">Active</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Edit" />
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="Last_x0020_Name" />
+                <FieldRef Name="First_x0020_Name" />
+                <FieldRef Name="Display_x0020_Name" />
+                <FieldRef Name="ItUser" />
+                <FieldRef Name="Sharepoint_x0020_ID" />
+                <FieldRef Name="Job_x0020_Title" />
+                <FieldRef Name="JobTitleLocal" />
+                <FieldRef Name="Reports_x0020_to" />
+                <FieldRef Name="Work_x0020_Email" />
+                <FieldRef Name="Work_x0020_Phone" />
+                <FieldRef Name="Mobile_x0020_Phone" />
+                <FieldRef Name="EmployeeMainStatusText" />
+                <FieldRef Name="EStatus" />
+                <FieldRef Name="EmployeeCategoryText" />
+                <FieldRef Name="Employee_x0020_Type" />
+                <FieldRef Name="Location" />
+                <FieldRef Name="StreetAddress" />
+                <FieldRef Name="Zip_x0020_Code" />
+                <FieldRef Name="PostOffice" />
+                <FieldRef Name="Country" />
+                <FieldRef Name="Company" />
+                <FieldRef Name="OrgUnitText" />
+                <FieldRef Name="DepartmentText" />
+                <FieldRef Name="TeamText" />
+                <FieldRef Name="Date_x0020_of_x0020_Hire" />
+                <FieldRef Name="ExtraLocations" />
+                <FieldRef Name="TeamLeader" />
+                <FieldRef Name="HomeCountry" />
+                <FieldRef Name="Full_x0020_Name" />
+                <FieldRef Name="Date_x0020_of_x0020_Birth" />
+                <FieldRef Name="Date_x0020_of_x0020_Exit" />
+                <FieldRef Name="Gender" />
+                <FieldRef Name="PercentagePosition" />
+                <FieldRef Name="ExcludeFromOrgChart" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">100</RowLimit>
+              <Aggregations Value="On">
+                <FieldRef Name="EStatus" Type="COUNT" />
+              </Aggregations>
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{9C7BF223-F882-4BB1-BBCC-AC86371DD508}" MobileView="TRUE" Type="HTML" DisplayName="Z Roles (evaluation)" Url="{site}/Lists/Employee List/RolesActive.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy Override="TRUE">
+                  <FieldRef Name="Last_x0020_Name" />
+                  <FieldRef Name="First_x0020_Name" />
+                </OrderBy>
+                <Where>
+                  <Gt>
+                    <FieldRef Name="Roles" />
+                    <Value Type="Text">0</Value>
+                  </Gt>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Edit" />
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="Last_x0020_Name" />
+                <FieldRef Name="First_x0020_Name" />
+                <FieldRef Name="Display_x0020_Name" />
+                <FieldRef Name="ItUser" />
+                <FieldRef Name="Sharepoint_x0020_ID" />
+                <FieldRef Name="Job_x0020_Title" />
+                <FieldRef Name="JobTitleLocal" />
+                <FieldRef Name="Roles" />
+                <FieldRef Name="Reports_x0020_to" />
+                <FieldRef Name="Work_x0020_Email" />
+                <FieldRef Name="Work_x0020_Phone" />
+                <FieldRef Name="Mobile_x0020_Phone" />
+                <FieldRef Name="EmployeeMainStatusText" />
+                <FieldRef Name="EStatus" />
+                <FieldRef Name="EmployeeCategoryText" />
+                <FieldRef Name="Employee_x0020_Type" />
+                <FieldRef Name="Location" />
+                <FieldRef Name="StreetAddress" />
+                <FieldRef Name="Zip_x0020_Code" />
+                <FieldRef Name="PostOffice" />
+                <FieldRef Name="Country" />
+                <FieldRef Name="Company" />
+                <FieldRef Name="OrgUnitText" />
+                <FieldRef Name="DepartmentText" />
+                <FieldRef Name="TeamText" />
+                <FieldRef Name="DottedLineAffiliation" />
+                <FieldRef Name="DottedLineOrgUnitText" />
+                <FieldRef Name="DottedLineDepartmentText" />
+                <FieldRef Name="GtDottedLineManager" />
+                <FieldRef Name="DottedLineTeamText" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="On">
+                <FieldRef Name="EStatus" Type="COUNT" />
+              </Aggregations>
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{BECCA538-3197-428C-92EB-C1E134041A55}" MobileView="TRUE" Type="HTML" DisplayName="Z Roles All (evaluation)" Url="{site}/Lists/Employee List/RolesAll.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy Override="TRUE">
+                  <FieldRef Name="Last_x0020_Name" />
+                  <FieldRef Name="First_x0020_Name" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Edit" />
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="Last_x0020_Name" />
+                <FieldRef Name="First_x0020_Name" />
+                <FieldRef Name="Display_x0020_Name" />
+                <FieldRef Name="ItUser" />
+                <FieldRef Name="Sharepoint_x0020_ID" />
+                <FieldRef Name="Job_x0020_Title" />
+                <FieldRef Name="JobTitleLocal" />
+                <FieldRef Name="Roles" />
+                <FieldRef Name="Reports_x0020_to" />
+                <FieldRef Name="Work_x0020_Email" />
+                <FieldRef Name="Work_x0020_Phone" />
+                <FieldRef Name="Mobile_x0020_Phone" />
+                <FieldRef Name="EmployeeMainStatusText" />
+                <FieldRef Name="EStatus" />
+                <FieldRef Name="EmployeeCategoryText" />
+                <FieldRef Name="Employee_x0020_Type" />
+                <FieldRef Name="Location" />
+                <FieldRef Name="StreetAddress" />
+                <FieldRef Name="Zip_x0020_Code" />
+                <FieldRef Name="PostOffice" />
+                <FieldRef Name="Country" />
+                <FieldRef Name="Company" />
+                <FieldRef Name="OrgUnitText" />
+                <FieldRef Name="DepartmentText" />
+                <FieldRef Name="TeamText" />
+                <FieldRef Name="DottedLineAffiliation" />
+                <FieldRef Name="DottedLineOrgUnitText" />
+                <FieldRef Name="DottedLineDepartmentText" />
+                <FieldRef Name="GtDottedLineManager" />
+                <FieldRef Name="DottedLineTeamText" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="On">
+                <FieldRef Name="EStatus" Type="COUNT" />
+              </Aggregations>
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{D23F392A-83DD-4346-8F7F-2D5F4ED0DAA6}" MobileView="TRUE" Type="HTML" DisplayName="Pårørendeinformasjon." Url="{site}/Lists/Employee List/Prrendeinformasjon.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy Override="TRUE">
+                  <FieldRef Name="Last_x0020_Name" />
+                  <FieldRef Name="First_x0020_Name" />
+                </OrderBy>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="EStatus" />
+                    <Value Type="Text">Active</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Last_x0020_Name" />
+                <FieldRef Name="First_x0020_Name" />
+                <FieldRef Name="Display_x0020_Name" />
+                <FieldRef Name="Reports_x0020_to" />
+                <FieldRef Name="Emergency_x0020_Contact" />
+                <FieldRef Name="Emergency_x0020_Contact_x0020_Ad" />
+                <FieldRef Name="Emergency_x0020_Contact_x0020_Ho" />
+                <FieldRef Name="Emergency_x0020_Contact_x0020_Mo" />
+                <FieldRef Name="Emergency_x0020_Relationship" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">100</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{F467FDC0-FD1F-4429-A405-80CD1176866F}" MobileView="TRUE" Type="HTML" DisplayName="Active-dob-doh" Url="{site}/Lists/Employee List/Activedobdoh.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query />
+              <ViewFields>
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="Last_x0020_Name" />
+                <FieldRef Name="First_x0020_Name" />
+                <FieldRef Name="Display_x0020_Name" />
+                <FieldRef Name="Job_x0020_Title" />
+                <FieldRef Name="JobTitleLocal" />
+                <FieldRef Name="EmployeeMainStatusText" />
+                <FieldRef Name="EStatus" />
+                <FieldRef Name="EmployeeCategoryText" />
+                <FieldRef Name="Employee_x0020_Type" />
+                <FieldRef Name="Date_x0020_of_x0020_Hire" />
+                <FieldRef Name="Date_x0020_of_x0020_Exit" />
+                <FieldRef Name="Date_x0020_of_x0020_Birth" />
+                <FieldRef Name="Company" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{7D805813-A635-4C86-9BF1-265EE124891D}" MobileView="TRUE" Type="HTML" DisplayName="Additional Locations" Url="{site}/Lists/Employee List/AdditionalLocations.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy Override="TRUE">
+                  <FieldRef Name="Last_x0020_Name" />
+                  <FieldRef Name="First_x0020_Name" />
+                </OrderBy>
+                <Where>
+                  <And>
+                    <Eq>
+                      <FieldRef Name="EStatus" />
+                      <Value Type="Text">Active</Value>
+                    </Eq>
+                    <IsNotNull>
+                      <FieldRef Name="Sharepoint_x0020_ID" />
+                    </IsNotNull>
+                  </And>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="Sharepoint_x0020_ID" />
+                <FieldRef Name="Display_x0020_Name" />
+                <FieldRef Name="Job_x0020_Title" />
+                <FieldRef Name="Location" />
+                <FieldRef Name="Country" />
+                <FieldRef Name="Company" />
+                <FieldRef Name="ExtraLocations" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">100</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{E4F4C3F2-6012-4D82-B0D5-F62D931846C7}" MobileView="TRUE" Type="HTML" DisplayName="Os" Url="{site}/Lists/Employee List/Os.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query />
+              <ViewFields>
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="Last_x0020_Name" />
+                <FieldRef Name="First_x0020_Name" />
+                <FieldRef Name="Display_x0020_Name" />
+                <FieldRef Name="Job_x0020_Title" />
+                <FieldRef Name="JobTitleLocal" />
+                <FieldRef Name="EmployeeMainStatusText" />
+                <FieldRef Name="EStatus" />
+                <FieldRef Name="EmployeeCategoryText" />
+                <FieldRef Name="Employee_x0020_Type" />
+                <FieldRef Name="Date_x0020_of_x0020_Hire" />
+                <FieldRef Name="Date_x0020_of_x0020_Exit" />
+                <FieldRef Name="Date_x0020_of_x0020_Birth" />
+                <FieldRef Name="Sharepoint_x0020_ID" />
+                <FieldRef Name="Drivers_x0020_License" />
+                <FieldRef Name="Company" />
+                <FieldRef Name="Location" />
+                <FieldRef Name="StreetAddress" />
+                <FieldRef Name="PostOffice" />
+                <FieldRef Name="Zip_x0020_Code" />
+                <FieldRef Name="Country" />
+                <FieldRef Name="Post_x0020_Office_x0020_Box" />
+                <FieldRef Name="OrgUnitText" />
+                <FieldRef Name="DepartmentText" />
+                <FieldRef Name="TeamText" />
+                <FieldRef Name="Reports_x0020_to" />
+                <FieldRef Name="DottedLineOrgUnitText" />
+                <FieldRef Name="DottedLineDepartmentText" />
+                <FieldRef Name="DottedLineTeamText" />
+                <FieldRef Name="GtDottedLineManager" />
+                <FieldRef Name="GtInCountryManager" />
+                <FieldRef Name="Work_x0020_Email" />
+                <FieldRef Name="Work_x0020_Phone" />
+                <FieldRef Name="Mobile_x0020_Phone" />
+                <FieldRef Name="CreateSearchTerm2" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+            <View Name="{1A7B75F9-640B-4ED9-B7D9-ADD578962E57}" MobileView="TRUE" Type="HTML" DisplayName="Status ansatte 210421" Url="{site}/Lists/Employee List/Status ansatte 210421.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy Override="TRUE">
+                  <FieldRef Name="Last_x0020_Name" />
+                  <FieldRef Name="First_x0020_Name" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Edit" />
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="Display_x0020_Name" />
+                <FieldRef Name="ItUser" />
+                <FieldRef Name="Job_x0020_Title" />
+                <FieldRef Name="Reports_x0020_to" />
+                <FieldRef Name="Mobile_x0020_Phone" />
+                <FieldRef Name="EmployeeMainStatusText" />
+                <FieldRef Name="EStatus" />
+                <FieldRef Name="EmployeeCategoryText" />
+                <FieldRef Name="Employee_x0020_Type" />
+                <FieldRef Name="Location" />
+                <FieldRef Name="Company" />
+                <FieldRef Name="OrgUnitText" />
+                <FieldRef Name="DepartmentText" />
+                <FieldRef Name="Date_x0020_of_x0020_Hire" />
+                <FieldRef Name="Date_x0020_of_x0020_Exit" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">100</RowLimit>
+              <Aggregations Value="On">
+                <FieldRef Name="EStatus" Type="COUNT" />
+              </Aggregations>
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewData />
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field Type="Note" DisplayName="DottedLineAffiliation_0" StaticName="gc154015879d4ea6b86d316b9cb60b58" Name="gc154015879d4ea6b86d316b9cb60b58" ID="{65dc4768-ce3d-451a-af74-9b10ac1e4db6}" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" ColName="ntext19" RowOrdinal="0" />
+            <Field Type="Note" DisplayName="OrgAffiliation_0" StaticName="j8dc40258f27446096cff45df08df1f0" Name="j8dc40258f27446096cff45df08df1f0" ID="{efb5270b-30ed-4d51-9135-9edd5fb31812}" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" ColName="ntext18" RowOrdinal="0" />
+            <Field Type="Note" DisplayName="Company_0" StaticName="j6ad7c3419d543b0a0eb1fa369096b29" Name="j6ad7c3419d543b0a0eb1fa369096b29" ID="{198026e7-2a67-40f3-8ff4-da1f40a97688}" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" ColName="ntext12" RowOrdinal="0" Version="1" />
+            <Field Type="Note" DisplayName="Location_0" StaticName="p004617806e84be7882b688e33bebfca" Name="p004617806e84be7882b688e33bebfca" ID="{7d19e542-0480-4ae8-aeca-3c7dff2c8077}" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" ColName="ntext11" RowOrdinal="0" Version="1" />
+            <Field Type="Note" DisplayName="Employee_x0020_Type_0" StaticName="b4f35f080e5b49ebb8b5e94f8fca271d" Name="b4f35f080e5b49ebb8b5e94f8fca271d" ID="{822e1427-99a5-4954-aafc-d9105a81696d}" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" ColName="ntext9" RowOrdinal="0" Version="1" />
+            <Field Type="Note" DisplayName="EStatus_0" StaticName="b44ae14c463b43598e1b0f272db86a41" Name="b44ae14c463b43598e1b0f272db86a41" ID="{7eb28f33-4754-4817-82ba-df3cafd06b87}" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" ColName="ntext4" RowOrdinal="0" Version="1" />
+            <Field DisplayName="DFFS Loader by SPJSBlog.com" Name="DFFS_Loader" Group="SPJSBlog.com" Type="Text" Description="Add this field to activate the DFFS feature." Direction="%7B%22fieldValidatonMsg%22%3A%22%22%2C%22configListBaseUrl%22%3A%22%7Bcurrentsite%7D%22%2C%22vLookupConfigListBaseUrl%22%3A%22%7Bcurrentsite%7D%22%2C%22rmConfigListBaseUrl%22%3A%22%7Bcurrentsite%7D%22%2C%22formTypeSwitchField%22%3A%22%22%2C%22license%22%3A%22mtiAxvdHWNpsmYwmt166N2-UnKqVegAtO6jC8850-BzIsewgaE1fm4QtrvfzFat7FX7tvZcltZze9zj6qXhrWwzIGPh97lCDdTtTNCt0D4EbUdNlthA2NY3iZWCYYI1PKg01TjZHBxkGNaT99aVyABYNPMoB79xGOqFGZPUu801lKlJXIfC2zq11IyWNqLa6MMB11CfCZPss1Esy01i7ZFxoMFyNW01YFHrGWYAK4D11irXsmdxPB7Ed9nXzwPIbFPoA77FesTwuFpecF23NgQacvRPikk08SZIrevJ3DgcM8-mpMXEClgUd4x9EWPOXyXYKD5A0fERcQxfsKiP51ExoGjogRsp5F2SyqYofMoNM5u3prBDiblMtkU54IDfdOHmJBCu55iCoVhfjlLM5y6NWkZCvbXIpr45bcbGxjvdMLb49lQcCkKMvjg5X0TkTOcMYfG5wA1tkgEZbzf5OEK2wsXowfcabB4N5XERiWPQZzzp53kpNPziBmwoV54bRlyfwRci5GI5fLiVzUxVpY5E6YXJIEGkGkqw45bUOcGRtNotO57mzsCwyuNfH4D9BlTEfrbz4xxO8PjRSHnnCbG4i9KqdvSziKzR4l5fzgnRIwOXb4c9OsoSnkBXduF50RyYSXUNgna5X1IAxTspXCX5hZ2gzIfwUrpTok53RyMUyTBVCNd54qVBUvtJIsK5B5xqCrb5zFHRCe6DvRxjNINHTy57dzJnjUPLHK4s9zyDQHQtsSSQ48gUeDULoIvCi49%22%2C%22scope%22%3A%22site%22%2C%22customFileLocation%22%3A%22%22%2C%22plugins%22%3A%5B%22utility%22%2C%22vLookup%22%2C%22rm%22%5D%2C%22customPlugins%22%3A%22%22%7D" ShowInFileDlg="FALSE" ShowInViewForms="FALSE" ShowInVersionHistory="FALSE" ID="{7eefbcb6-3e5e-43a4-8ffc-7ad73a139866}" SourceID="{6127c33f-315e-4e54-a280-927ca4a0f037}" StaticName="DFFS_Loader" JSLink="~site/SPJS/DFFS/jslink/DFFS_JSLink.js" Version="1" ColName="nvarchar55" RowOrdinal="0" />
+            <Field DisplayName="Job Title" Name="Job_x0020_Title" Type="Text" ID="{38bb52af-f7cb-4d12-b6e6-7ac3aca1fcfd}" Group="" StaticName="Job_x0020_Title" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" ColName="nvarchar5" RowOrdinal="0" Description="Enter the person’s official title in English." Version="3" CustomFormatter="" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="TRUE" MaxLength="255" />
+            <Field DisplayName="Manager" Name="Reports_x0020_to" Type="User" ID="{236236d7-c21f-4626-a01c-347832a40f51}" Group="" StaticName="Reports_x0020_to" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" ColName="int1" RowOrdinal="0" Required="FALSE" EnforceUniqueValues="FALSE" ShowField="ImnName" UserSelectionMode="PeopleAndGroups" UserSelectionScope="0" Version="2" Description="Solid Line Manager - Resource owner with personnel responsibility." />
+            <Field Type="Choice" DisplayName="Source of Hire" ID="{273e8641-4a7b-4300-83a9-d0cd6ea1b6f1}" Format="Dropdown" BaseType="Text" Description="Select one of the available options." Name="Source_x0020_of_x0020_Hire" Group="" StaticName="Source_x0020_of_x0020_Hire" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" ColName="nvarchar13" RowOrdinal="0" Version="1">
+              <CHOICES>
+                <CHOICE>Direct</CHOICE>
+                <CHOICE>Referral</CHOICE>
+                <CHOICE>Recruiter</CHOICE>
+                <CHOICE>Web</CHOICE>
+                <CHOICE>Advertizement</CHOICE>
+              </CHOICES>
+            </Field>
+            <Field Format="DateOnly" Description="" DisplayName="Date of Exit" Type="DateTime" ID="{f95b347f-fb8a-4488-bc32-0bd86ee17483}" Name="Date_x0020_of_x0020_Exit" Group="" StaticName="Date_x0020_of_x0020_Exit" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" ColName="datetime2" RowOrdinal="0" />
+            <Field Type="Choice" DisplayName="Gender" ID="{cf42a556-20a6-43c5-971d-996ed9e3ecab}" Format="Dropdown" BaseType="Text" Description="" Name="Gender" Group="" StaticName="Gender" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" ColName="nvarchar14" RowOrdinal="0">
+              <CHOICES>
+                <CHOICE>Male</CHOICE>
+                <CHOICE>Female</CHOICE>
+              </CHOICES>
+            </Field>
+            <Field Format="DateOnly" Description="" DisplayName="Date of Birth" Type="DateTime" ID="{3dd330a5-c57b-497d-9657-949eb013a7a2}" Name="Date_x0020_of_x0020_Birth" Group="" StaticName="Date_x0020_of_x0020_Birth" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" ColName="datetime3" RowOrdinal="0" />
+            <Field Name="Home_x0020_Address" FromBaseType="FALSE" Type="Text" DisplayName="Home Street Address" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{fb06b65c-af16-431d-80c9-071fef90f601}" StaticName="Home_x0020_Address" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" ColName="nvarchar38" RowOrdinal="0" CustomFormatter="" Version="1" />
+            <Field Type="DateTime" DisplayName="Date of Last Review" Description="Enter the date of the last employee appraisal/review" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateOnly" ID="{e91aeaa9-02bf-40be-8228-a012a2bdd2b1}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Date_x0020_of_x0020_Last_x0020_R" Name="Date_x0020_of_x0020_Last_x0020_R" ColName="datetime4" RowOrdinal="0" />
+            <Field Type="DateTime" DisplayName="Next Review Date" Description="Enter date for next review/appraisal" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateOnly" ID="{01809179-9bd6-401b-b339-7fa8d9f8383c}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Next_x0020_Review_x0020_Date" Name="Next_x0020_Review_x0020_Date" ColName="datetime5" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="vLookupEmpDoc" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{4bea9817-05db-4909-8dc4-5928fd62b3af}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="vLookupEmpDoc" Name="vLookupEmpDoc" ColName="nvarchar1" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="vLookupBen" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{4f51c2e4-2939-4f21-bf69-d03c5aa7cec0}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="vLookupBen" Name="vLookupBen" ColName="nvarchar2" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="Certifications" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{474f641e-26d5-4256-8533-bd8262deb451}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Certifications" Name="Certifications" ColName="nvarchar11" RowOrdinal="0" />
+            <Field Type="MultiChoice" DisplayName="Training" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" FillInChoice="FALSE" ID="{0c22d06c-d046-435d-90a4-9d714fc259fa}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Training" Name="Training" ColName="ntext1" RowOrdinal="0">
+              <CHOICES>
+                <CHOICE>Sales</CHOICE>
+                <CHOICE>Management</CHOICE>
+                <CHOICE>Customer Service</CHOICE>
+              </CHOICES>
+            </Field>
+            <Field Type="Text" DisplayName="Education" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{1350712a-cf97-4c57-9981-ad5b0b528c66}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Education" Name="Education" ColName="nvarchar12" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="Last Name" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="TRUE" MaxLength="255" ID="{2f934b20-ff29-477a-a9a2-ccaa40893dba}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Last_x0020_Name" Name="Last_x0020_Name" ColName="nvarchar17" RowOrdinal="0" Description="Enter the persons last name." Version="2" />
+            <Field Type="Text" DisplayName="First Name" Description="Enter the first name and middle name if needed for the person." Required="TRUE" EnforceUniqueValues="FALSE" Indexed="TRUE" MaxLength="255" ID="{e391cc6f-a8c8-4108-952b-651960f00a9f}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="First_x0020_Name" Name="First_x0020_Name" ColName="nvarchar18" RowOrdinal="0" CustomFormatter="" Version="3" />
+            <Field Type="DateTime" DisplayName="Date of Hire" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateOnly" ID="{ad6bdbb6-bbc3-44dd-825a-6cf8852167b1}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Date_x0020_of_x0020_Hire" Name="Date_x0020_of_x0020_Hire" ColName="datetime1" RowOrdinal="0" Description="Enter date of hire -- may need to be consistent with Date of Hire in Employee Services" CalType="0" FriendlyDisplayFormat="Disabled" />
+            <Field Type="Calculated" DisplayName="Full Name" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateOnly" LCID="1033" ResultType="Text" ReadOnly="TRUE" ID="{ce3ebf70-013a-4ce1-bbb1-79944f6e0181}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Full_x0020_Name" Name="Full_x0020_Name" ColName="sql_variant1" RowOrdinal="0" Required="FALSE" CustomFormatter="" Version="2">
+              <Formula>=[{fieldtitle:First_x0020_Name}]&amp;" "&amp;[{fieldtitle:Last_x0020_Name}]</Formula>
+            </Field>
+            <Field Type="User" DisplayName="Sharepoint ID" List="UserInfo" Description="Select the SharePoint User name for this person if available" Required="FALSE" EnforceUniqueValues="FALSE" ShowField="NameWithPictureAndDetails" UserSelectionMode="PeopleOnly" UserSelectionScope="0" ID="{b91735c4-9a8b-4faa-8238-165084fd4e3a}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Sharepoint_x0020_ID" Name="Sharepoint_x0020_ID" ColName="int2" RowOrdinal="0" Group="" />
+            <Field Type="Boolean" DisplayName="Start New Review" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{922c84b8-cbb3-4c57-9e86-ae68fdf837a0}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Start_x0020_New_x0020_Review" Name="Start_x0020_New_x0020_Review" ColName="bit1" RowOrdinal="0">
+              <Default>0</Default>
+            </Field>
+            <Field Type="Text" DisplayName="Current Review/Appraisal" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{c5fd4483-434b-4f59-8014-897d8b3d6679}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Current_x0020_Review_x002f_Appra" Name="Current_x0020_Review_x002f_Appra" ColName="nvarchar16" RowOrdinal="0" />
+            <Field Type="Note" DisplayName="Awards" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" NumLines="6" RichText="FALSE" Sortable="FALSE" ID="{55d909ab-af40-4820-add1-0fdec19f240d}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Awards" Name="Awards" ColName="ntext5" RowOrdinal="0" />
+            <Field Type="Note" DisplayName="HR Notes" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" NumLines="6" RichText="FALSE" AppendOnly="TRUE" Sortable="FALSE" ID="{7820a60d-e5ee-44c7-9e95-7853415f4b05}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="HR_x0020_Notes" Name="HR_x0020_Notes" ColName="ntext6" RowOrdinal="0" />
+            <Field Type="Number" DisplayName="Review Rating" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{96ddb64e-8d25-47d8-b9e9-a793c1c3718c}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Review_x0020_Rating" Name="Review_x0020_Rating" ColName="float4" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="Home Phone" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{fc18a81b-d1b1-4352-9df4-de0b4a43d1c4}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Home_x0020_Phone" Name="Home_x0020_Phone" ColName="nvarchar22" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="Mobile Phone" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="TRUE" MaxLength="255" ID="{59522558-1e70-47bc-abce-47cab9c71c3e}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Mobile_x0020_Phone" Name="Mobile_x0020_Phone" ColName="nvarchar23" RowOrdinal="0" Version="1" />
+            <Field Type="Text" DisplayName="Personal Email" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{3194a92d-74d3-4a33-89ff-6e28c47b3783}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Personal_x0020_Email" Name="Personal_x0020_Email" ColName="nvarchar24" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="Emergency Contact" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{93e1c147-3e47-4b9f-91e3-df96c27e8e20}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Emergency_x0020_Contact" Name="Emergency_x0020_Contact" ColName="nvarchar29" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="Emergency Contact Home Phone" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{5375297b-4909-4a78-b843-9093b8062b86}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Emergency_x0020_Contact_x0020_Ho" Name="Emergency_x0020_Contact_x0020_Ho" ColName="nvarchar30" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="Emergency Contact Mobile" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{d8bbe4c0-f86c-4460-8a95-74f4da4aef5d}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Emergency_x0020_Contact_x0020_Mo" Name="Emergency_x0020_Contact_x0020_Mo" ColName="nvarchar31" RowOrdinal="0" />
+            <Field Type="Note" DisplayName="Emergency Contact Address" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" NumLines="6" RichText="TRUE" RichTextMode="FullHtml" IsolateStyles="TRUE" Sortable="FALSE" ID="{bdf09d25-8352-469d-b28f-bf3236710312}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Emergency_x0020_Contact_x0020_Ad" Name="Emergency_x0020_Contact_x0020_Ad" ColName="ntext7" RowOrdinal="0" RestrictedMode="TRUE" AppendOnly="FALSE" CustomFormatter="" Version="2" />
+            <Field Type="Text" DisplayName="Emergency Relationship" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{8890345a-ec37-4079-9a35-2b0e31b2b20d}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Emergency_x0020_Relationship" Name="Emergency_x0020_Relationship" ColName="nvarchar33" RowOrdinal="0" />
+            <Field Type="Choice" DisplayName="Reason For Exit" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="Dropdown" FillInChoice="TRUE" ID="{8c4a8ce2-b05e-4ccf-afc8-566c03c01661}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Reason_x0020_For_x0020_Exit" Name="Reason_x0020_For_x0020_Exit" ColName="nvarchar34" RowOrdinal="0">
+              <CHOICES>
+                <CHOICE>Terminated</CHOICE>
+                <CHOICE>Retirement</CHOICE>
+                <CHOICE>Left for better opportunity</CHOICE>
+                <CHOICE>Career Change</CHOICE>
+                <CHOICE>Other</CHOICE>
+              </CHOICES>
+            </Field>
+            <Field Type="Text" DisplayName="vLookupCert" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{83f98050-035a-443b-a6cd-2d5e23d224a1}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="vLookupCert" Name="vLookupCert" ColName="nvarchar35" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="Location Postal Code" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="TRUE" MaxLength="255" ID="{eec0add4-09b1-43a8-b7d2-ec2ae1e1a65b}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Zip_x0020_Code" Name="Zip_x0020_Code" ColName="nvarchar42" RowOrdinal="0" CustomFormatter="" Version="3" />
+            <Field Type="Text" DisplayName="Work Email" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{81926438-9cf0-4f78-ac0f-fe509f785ce1}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Work_x0020_Email" Name="Work_x0020_Email" ColName="nvarchar45" RowOrdinal="0" Version="2" />
+            <Field Type="Text" DisplayName="Work Phone" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="TRUE" MaxLength="255" ID="{c08e94ee-8f5b-4cb7-b45d-a4c608ff8cdb}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Work_x0020_Phone" Name="Work_x0020_Phone" ColName="nvarchar46" RowOrdinal="0" Version="1" />
+            <Field Type="Text" DisplayName="vLookup_Review" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{a757880a-dc4e-4f32-b902-f4feff682581}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="vLookup_Review" Name="vLookup_Review" ColName="nvarchar52" RowOrdinal="0" />
+            <Field Type="Calculated" DisplayName="LookupEmp" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateOnly" LCID="1033" ResultType="Text" ReadOnly="TRUE" ID="{0b3d7743-a9ac-48f3-b69d-ad1f6f2c19f0}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="LookupEmp" Name="LookupEmp" ColName="sql_variant2" RowOrdinal="0" Required="FALSE">
+              <Formula>=[{fieldtitle:First_x0020_Name}]&amp;" "&amp;[{fieldtitle:Last_x0020_Name}]&amp;"-"&amp;[{fieldtitle:Title}]</Formula>
+            </Field>
+            <Field Type="Choice" DisplayName="Last Starts With" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="Dropdown" FillInChoice="FALSE" ID="{8591f2af-cbd6-4625-8622-6c3e4fb4a018}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="Last_x0020_Starts_x0020_With" Name="Last_x0020_Starts_x0020_With" ColName="nvarchar19" RowOrdinal="0" Version="1">
+              <Default>A</Default>
+              <CHOICES>
+                <CHOICE>A</CHOICE>
+                <CHOICE>B</CHOICE>
+                <CHOICE>C</CHOICE>
+                <CHOICE>D</CHOICE>
+                <CHOICE>E</CHOICE>
+                <CHOICE>F</CHOICE>
+                <CHOICE>G</CHOICE>
+                <CHOICE>H</CHOICE>
+                <CHOICE>I</CHOICE>
+                <CHOICE>J</CHOICE>
+                <CHOICE>K</CHOICE>
+                <CHOICE>L</CHOICE>
+                <CHOICE>M</CHOICE>
+                <CHOICE>N</CHOICE>
+                <CHOICE>O</CHOICE>
+                <CHOICE>P</CHOICE>
+                <CHOICE>Q</CHOICE>
+                <CHOICE>R</CHOICE>
+                <CHOICE>S</CHOICE>
+                <CHOICE>T</CHOICE>
+                <CHOICE>U</CHOICE>
+                <CHOICE>V</CHOICE>
+                <CHOICE>X</CHOICE>
+                <CHOICE>Y</CHOICE>
+                <CHOICE>Z</CHOICE>
+              </CHOICES>
+            </Field>
+            <Field Type="Boolean" DisplayName="WF_OnboardCreated" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{6f4c6ba4-107b-48d3-8c2f-7ef210cf0be2}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="WF_OnboardCreated" Name="WF_OnboardCreated" ColName="bit2" RowOrdinal="0">
+              <Default>0</Default>
+            </Field>
+            <Field Type="Text" DisplayName="vLookupPolicies" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{67386354-9b0f-46d4-b742-d9c3b08f8d83}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="vLookupPolicies" Name="vLookupPolicies" ColName="nvarchar26" RowOrdinal="0" />
+            <Field Type="LookupMulti" DisplayName="Policy Groups" Required="FALSE" EnforceUniqueValues="FALSE" List="{listid:Policy Groups}" ShowField="Title" Mult="TRUE" Sortable="FALSE" UnlimitedLengthInDocumentLibrary="FALSE" RelationshipDeleteBehavior="None" ID="{6e8919cd-5508-461a-9820-d248ae02f386}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="PGS" Name="PGS" ColName="int4" RowOrdinal="0" Description="Select the Policy Groups this person belongs to" Group="" />
+            <Field Type="Text" DisplayName="GS" Description="Internal Use only used for Search" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{0f3691cd-8f63-4768-9518-1369b65046a6}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="GS" Name="GS" ColName="nvarchar27" RowOrdinal="0" />
+            <Field DisplayName="CreateSEarchterm" Type="URL" Required="FALSE" ID="{1ab92c27-f1d5-4742-878c-4bd57da0b65a}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="CreateSEarchterm" Name="CreateSEarchterm" ColName="nvarchar28" RowOrdinal="0" ColName2="nvarchar36" RowOrdinal2="0" ShowInDisplayForm="FALSE" ShowInEditForm="FALSE" ShowInNewForm="FALSE" Hidden="FALSE" CanToggleHidden="TRUE" Version="4" />
+            <Field DisplayName="New Review Needed" Type="WorkflowStatus" Required="FALSE" ID="{4c891712-2210-4dee-9605-a4427f5a0618}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="NewRevie" Name="NewRevie" ColName="nvarchar15" RowOrdinal="0" WorkflowStatusURL="_layouts/15/WrkStat.aspx" ReadOnly="TRUE" Hidden="FALSE" CanToggleHidden="TRUE" Version="3">
+              <CHOICES>
+                <CHOICE>Starting</CHOICE>
+                <CHOICE>Failed on Start</CHOICE>
+                <CHOICE>In Progress</CHOICE>
+                <CHOICE>Error Occurred</CHOICE>
+                <CHOICE>Canceled</CHOICE>
+                <CHOICE>Completed</CHOICE>
+                <CHOICE>Failed on Start (retrying)</CHOICE>
+                <CHOICE>Error Occurred (retrying)</CHOICE>
+                <CHOICE />
+                <CHOICE />
+                <CHOICE />
+                <CHOICE />
+                <CHOICE />
+                <CHOICE />
+                <CHOICE />
+                <CHOICE>Canceled</CHOICE>
+                <CHOICE>Approved</CHOICE>
+                <CHOICE>Rejected</CHOICE>
+              </CHOICES>
+            </Field>
+            <Field DisplayName="EMPL_CreateOnboard" Type="WorkflowStatus" Required="FALSE" ID="{1ed3de0a-4d1f-4b45-a0e9-402107adcaca}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="EMPLCrea" Name="EMPLCrea" ColName="nvarchar56" RowOrdinal="0" WorkflowStatusURL="_layouts/15/WrkStat.aspx" ReadOnly="TRUE" Hidden="FALSE" CanToggleHidden="TRUE" Version="3">
+              <CHOICES>
+                <CHOICE>Starting</CHOICE>
+                <CHOICE>Failed on Start</CHOICE>
+                <CHOICE>In Progress</CHOICE>
+                <CHOICE>Error Occurred</CHOICE>
+                <CHOICE>Canceled</CHOICE>
+                <CHOICE>Completed</CHOICE>
+                <CHOICE>Failed on Start (retrying)</CHOICE>
+                <CHOICE>Error Occurred (retrying)</CHOICE>
+                <CHOICE />
+                <CHOICE />
+                <CHOICE />
+                <CHOICE />
+                <CHOICE />
+                <CHOICE />
+                <CHOICE />
+                <CHOICE>Canceled</CHOICE>
+                <CHOICE>Approved</CHOICE>
+                <CHOICE>Rejected</CHOICE>
+              </CHOICES>
+            </Field>
+            <Field DisplayName="EmpListCreateFilter" Type="WorkflowStatus" Required="FALSE" ID="{a074107f-86ee-447a-be8a-c073e7252eb1}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="EmpListC" Name="EmpListC" ColName="nvarchar7" RowOrdinal="0" WorkflowStatusURL="_layouts/15/WrkStat.aspx" ReadOnly="TRUE" Hidden="FALSE" CanToggleHidden="TRUE" Version="3">
+              <CHOICES>
+                <CHOICE>Starting</CHOICE>
+                <CHOICE>Failed on Start</CHOICE>
+                <CHOICE>In Progress</CHOICE>
+                <CHOICE>Error Occurred</CHOICE>
+                <CHOICE>Canceled</CHOICE>
+                <CHOICE>Completed</CHOICE>
+                <CHOICE>Failed on Start (retrying)</CHOICE>
+                <CHOICE>Error Occurred (retrying)</CHOICE>
+                <CHOICE />
+                <CHOICE />
+                <CHOICE />
+                <CHOICE />
+                <CHOICE />
+                <CHOICE />
+                <CHOICE />
+                <CHOICE>Canceled</CHOICE>
+                <CHOICE>Approved</CHOICE>
+                <CHOICE>Rejected</CHOICE>
+              </CHOICES>
+            </Field>
+            <Field Type="Boolean" DisplayName="UICreated" Description="Internal use only -- used to prevent workflow that created Onboarding tasks from running when importing profiles (using Sync tool) -- set to yes by DFFS rule" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{cfb752fc-7510-4013-8ef0-87cbae2edfaa}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="UICreated" Name="UICreated" ColName="bit3" RowOrdinal="0">
+              <Default>0</Default>
+            </Field>
+            <Field Type="Text" DisplayName="DeptText" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{4df0d10f-61aa-4f19-a37d-41c639d64384}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="DeptText" Name="DeptText" ColName="nvarchar53" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="IWSAPHistory" Name="IWSAPHistory" Hidden="FALSE" ShowInDisplayForm="FALSE" ShowInEditForm="FALSE" ShowInNewForm="FALSE" ShowInFileDlg="FALSE" ShowInListSettings="FALSE" ShowInVersionHistory="FALSE" ShowInViewForms="FALSE" ID="{b5f09348-a6d9-44d9-8fc7-63be7d42bd37}" SourceID="{{listid:Employee List - List ID registered in InfoWise}}" StaticName="IWSAPHistory" ColName="nvarchar54" RowOrdinal="0" Version="1" />
+            <Field Type="TaxonomyFieldType" DisplayName="Employee Status" List="{listid:TaxonomyHiddenList}" WebId="c34ff47a-b4f6-49a3-bc4c-4af5b05bcc17" ShowField="Term1033" Required="FALSE" EnforceUniqueValues="FALSE" ID="{b44ae14c-463b-4359-8e1b-0f272db86a41}" SourceID="{{listid:Employee List}}" StaticName="EStatus" Name="EStatus" ColName="int6" RowOrdinal="0" Version="5" Group="" Description="Employee Status is the sub-category for Employee Main Status.">
+              <Default>137;#Active|2d612234-cb8c-4c5c-9189-fe2d7c89fd8c</Default>
+              <Customization>
+                <ArrayOfProperty>
+                  <Property>
+                    <Name>SspId</Name>
+                    <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+                  </Property>
+                  <Property>
+                    <Name>GroupId</Name>
+                  </Property>
+                  <Property>
+                    <Name>TermSetId</Name>
+                    <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:CT_HR:Employee Status}</Value>
+                  </Property>
+                  <Property>
+                    <Name>AnchorId</Name>
+                    <Value xmlns:q3="http://www.w3.org/2001/XMLSchema" p4:type="q3:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">00000000-0000-0000-0000-000000000000</Value>
+                  </Property>
+                  <Property>
+                    <Name>UserCreated</Name>
+                    <Value xmlns:q4="http://www.w3.org/2001/XMLSchema" p4:type="q4:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>Open</Name>
+                    <Value xmlns:q5="http://www.w3.org/2001/XMLSchema" p4:type="q5:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>TextField</Name>
+                    <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{7eb28f33-4754-4817-82ba-df3cafd06b87}</Value>
+                  </Property>
+                  <Property>
+                    <Name>IsPathRendered</Name>
+                    <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>IsKeyword</Name>
+                    <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>TargetTemplate</Name>
+                  </Property>
+                  <Property>
+                    <Name>CreateValuesInEditForm</Name>
+                    <Value xmlns:q9="http://www.w3.org/2001/XMLSchema" p4:type="q9:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterAssemblyStrongName</Name>
+                    <Value xmlns:q10="http://www.w3.org/2001/XMLSchema" p4:type="q10:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">Microsoft.SharePoint.Taxonomy, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterClassName</Name>
+                    <Value xmlns:q11="http://www.w3.org/2001/XMLSchema" p4:type="q11:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">Microsoft.SharePoint.Taxonomy.TaxonomyField</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterMethodName</Name>
+                    <Value xmlns:q12="http://www.w3.org/2001/XMLSchema" p4:type="q12:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">GetFilteringHtml</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterJavascriptProperty</Name>
+                    <Value xmlns:q13="http://www.w3.org/2001/XMLSchema" p4:type="q13:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">FilteringJavascript</Value>
+                  </Property>
+                </ArrayOfProperty>
+              </Customization>
+            </Field>
+            <Field Type="TaxonomyFieldType" DisplayName="Employee Type" List="{listid:TaxonomyHiddenList}" WebId="c34ff47a-b4f6-49a3-bc4c-4af5b05bcc17" ShowField="Term1033" Required="FALSE" EnforceUniqueValues="FALSE" ID="{b4f35f08-0e5b-49eb-b8b5-e94f8fca271d}" SourceID="{{listid:Employee List}}" StaticName="Employee_x0020_Type" Name="Employee_x0020_Type" ColName="int8" RowOrdinal="0" Version="8" Group="" Description="Employee Type is the sub-category for Employee Category.">
+              <Default>73;#Permanent|f2c1d1ab-91da-4fe2-a129-002af712c787</Default>
+              <Customization>
+                <ArrayOfProperty>
+                  <Property>
+                    <Name>SspId</Name>
+                    <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+                  </Property>
+                  <Property>
+                    <Name>GroupId</Name>
+                  </Property>
+                  <Property>
+                    <Name>TermSetId</Name>
+                    <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:CT_HR:Employee Category}</Value>
+                  </Property>
+                  <Property>
+                    <Name>AnchorId</Name>
+                    <Value xmlns:q3="http://www.w3.org/2001/XMLSchema" p4:type="q3:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">00000000-0000-0000-0000-000000000000</Value>
+                  </Property>
+                  <Property>
+                    <Name>UserCreated</Name>
+                    <Value xmlns:q4="http://www.w3.org/2001/XMLSchema" p4:type="q4:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>Open</Name>
+                    <Value xmlns:q5="http://www.w3.org/2001/XMLSchema" p4:type="q5:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>TextField</Name>
+                    <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{822e1427-99a5-4954-aafc-d9105a81696d}</Value>
+                  </Property>
+                  <Property>
+                    <Name>IsPathRendered</Name>
+                    <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>IsKeyword</Name>
+                    <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>TargetTemplate</Name>
+                  </Property>
+                  <Property>
+                    <Name>CreateValuesInEditForm</Name>
+                    <Value xmlns:q9="http://www.w3.org/2001/XMLSchema" p4:type="q9:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterAssemblyStrongName</Name>
+                    <Value xmlns:q10="http://www.w3.org/2001/XMLSchema" p4:type="q10:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">Microsoft.SharePoint.Taxonomy, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterClassName</Name>
+                    <Value xmlns:q11="http://www.w3.org/2001/XMLSchema" p4:type="q11:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">Microsoft.SharePoint.Taxonomy.TaxonomyField</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterMethodName</Name>
+                    <Value xmlns:q12="http://www.w3.org/2001/XMLSchema" p4:type="q12:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">GetFilteringHtml</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterJavascriptProperty</Name>
+                    <Value xmlns:q13="http://www.w3.org/2001/XMLSchema" p4:type="q13:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">FilteringJavascript</Value>
+                  </Property>
+                </ArrayOfProperty>
+              </Customization>
+            </Field>
+            <Field Type="TaxonomyFieldType" DisplayName="Location" List="{listid:TaxonomyHiddenList}" WebId="c34ff47a-b4f6-49a3-bc4c-4af5b05bcc17" ShowField="Term1033" Required="FALSE" EnforceUniqueValues="FALSE" ID="{90046178-06e8-4be7-882b-688e33bebfca}" SourceID="{{listid:Employee List}}" StaticName="Location" Name="Location" ColName="int9" RowOrdinal="0" Version="7" Description="Office location. Select one of the available options by clicking the selection symbol to the right." Indexed="FALSE" Group="">
+              <Default />
+              <Customization>
+                <ArrayOfProperty>
+                  <Property>
+                    <Name>SspId</Name>
+                    <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+                  </Property>
+                  <Property>
+                    <Name>GroupId</Name>
+                  </Property>
+                  <Property>
+                    <Name>TermSetId</Name>
+                    <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:GT_Organization:Location}</Value>
+                  </Property>
+                  <Property>
+                    <Name>AnchorId</Name>
+                    <Value xmlns:q3="http://www.w3.org/2001/XMLSchema" p4:type="q3:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">00000000-0000-0000-0000-000000000000</Value>
+                  </Property>
+                  <Property>
+                    <Name>UserCreated</Name>
+                    <Value xmlns:q4="http://www.w3.org/2001/XMLSchema" p4:type="q4:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>Open</Name>
+                    <Value xmlns:q5="http://www.w3.org/2001/XMLSchema" p4:type="q5:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>TextField</Name>
+                    <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{7d19e542-0480-4ae8-aeca-3c7dff2c8077}</Value>
+                  </Property>
+                  <Property>
+                    <Name>IsPathRendered</Name>
+                    <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>IsKeyword</Name>
+                    <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>TargetTemplate</Name>
+                  </Property>
+                  <Property>
+                    <Name>CreateValuesInEditForm</Name>
+                    <Value xmlns:q9="http://www.w3.org/2001/XMLSchema" p4:type="q9:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterAssemblyStrongName</Name>
+                    <Value xmlns:q10="http://www.w3.org/2001/XMLSchema" p4:type="q10:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">Microsoft.SharePoint.Taxonomy, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterClassName</Name>
+                    <Value xmlns:q11="http://www.w3.org/2001/XMLSchema" p4:type="q11:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">Microsoft.SharePoint.Taxonomy.TaxonomyField</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterMethodName</Name>
+                    <Value xmlns:q12="http://www.w3.org/2001/XMLSchema" p4:type="q12:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">GetFilteringHtml</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterJavascriptProperty</Name>
+                    <Value xmlns:q13="http://www.w3.org/2001/XMLSchema" p4:type="q13:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">FilteringJavascript</Value>
+                  </Property>
+                </ArrayOfProperty>
+              </Customization>
+            </Field>
+            <Field Type="Text" DisplayName="Location Street Address" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="TRUE" MaxLength="255" ID="{b2785d98-3c59-4505-b2b6-eb103ef09e3f}" SourceID="{{listid:Employee List}}" StaticName="StreetAddress" Name="StreetAddress" ColName="nvarchar6" RowOrdinal="0" Version="4" CustomFormatter="" />
+            <Field Type="Text" DisplayName="Location Post Office" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="TRUE" MaxLength="255" ID="{fca1ff0c-a929-477e-9aff-e03594168b4b}" SourceID="{{listid:Employee List}}" StaticName="PostOffice" Name="PostOffice" ColName="nvarchar8" RowOrdinal="0" Version="4" CustomFormatter="" />
+            <Field Type="Text" DisplayName="Location Country" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="TRUE" MaxLength="255" ID="{5be6dc55-b8b8-4b72-bc36-817ac62d9ab0}" SourceID="{{listid:Employee List}}" StaticName="Country" Name="Country" ColName="nvarchar21" RowOrdinal="0" Version="3" CustomFormatter="" />
+            <Field Type="Text" DisplayName="Location P.O. Box" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{a04889b1-ab2e-4d11-865c-09c46dea112e}" SourceID="{{listid:Employee List}}" StaticName="Post_x0020_Office_x0020_Box" Name="Post_x0020_Office_x0020_Box" ColName="nvarchar37" RowOrdinal="0" Version="3" CustomFormatter="" />
+            <Field Type="TaxonomyFieldType" DisplayName="Company" List="{listid:TaxonomyHiddenList}" WebId="c34ff47a-b4f6-49a3-bc4c-4af5b05bcc17" ShowField="Term1033" Required="FALSE" EnforceUniqueValues="FALSE" ID="{36ad7c34-19d5-43b0-a0eb-1fa369096b29}" SourceID="{{listid:Employee List}}" StaticName="Company" Name="Company" ColName="int10" RowOrdinal="0" Version="6" Description="Company with which the employee is formally employed" Group="">
+              <Default>28;#Company All|a52f6e7d-abe5-4863-bd71-862b9e753db9</Default>
+              <Customization>
+                <ArrayOfProperty>
+                  <Property>
+                    <Name>SspId</Name>
+                    <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+                  </Property>
+                  <Property>
+                    <Name>GroupId</Name>
+                  </Property>
+                  <Property>
+                    <Name>TermSetId</Name>
+                    <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:GT_Organization:Company}</Value>
+                  </Property>
+                  <Property>
+                    <Name>AnchorId</Name>
+                    <Value xmlns:q3="http://www.w3.org/2001/XMLSchema" p4:type="q3:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">00000000-0000-0000-0000-000000000000</Value>
+                  </Property>
+                  <Property>
+                    <Name>UserCreated</Name>
+                    <Value xmlns:q4="http://www.w3.org/2001/XMLSchema" p4:type="q4:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>Open</Name>
+                    <Value xmlns:q5="http://www.w3.org/2001/XMLSchema" p4:type="q5:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>TextField</Name>
+                    <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{198026e7-2a67-40f3-8ff4-da1f40a97688}</Value>
+                  </Property>
+                  <Property>
+                    <Name>IsPathRendered</Name>
+                    <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>IsKeyword</Name>
+                    <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>TargetTemplate</Name>
+                  </Property>
+                  <Property>
+                    <Name>CreateValuesInEditForm</Name>
+                    <Value xmlns:q9="http://www.w3.org/2001/XMLSchema" p4:type="q9:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterAssemblyStrongName</Name>
+                    <Value xmlns:q10="http://www.w3.org/2001/XMLSchema" p4:type="q10:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">Microsoft.SharePoint.Taxonomy, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterClassName</Name>
+                    <Value xmlns:q11="http://www.w3.org/2001/XMLSchema" p4:type="q11:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">Microsoft.SharePoint.Taxonomy.TaxonomyField</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterMethodName</Name>
+                    <Value xmlns:q12="http://www.w3.org/2001/XMLSchema" p4:type="q12:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">GetFilteringHtml</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterJavascriptProperty</Name>
+                    <Value xmlns:q13="http://www.w3.org/2001/XMLSchema" p4:type="q13:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">FilteringJavascript</Value>
+                  </Property>
+                </ArrayOfProperty>
+              </Customization>
+            </Field>
+            <Field Type="LookupMulti" DisplayName="Drivers License" Required="FALSE" EnforceUniqueValues="FALSE" List="{listid:Drivers License}" ShowField="Title" Mult="TRUE" Sortable="FALSE" UnlimitedLengthInDocumentLibrary="FALSE" RelationshipDeleteBehavior="None" ID="{42c3da9b-0efb-46f8-9f57-45d2f9f193c1}" SourceID="{{listid:Employee List}}" StaticName="Drivers_x0020_License" Name="Drivers_x0020_License" ColName="int11" RowOrdinal="0" Version="2" Group="" />
+            <Field Type="Text" DisplayName="Home Postal Code" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{701b03a1-c1fa-4b41-9d1d-5841c91bb0d9}" SourceID="{{listid:Employee List}}" StaticName="HomePostalCode" Name="HomePostalCode" ColName="nvarchar25" RowOrdinal="0" Version="2" CustomFormatter="" />
+            <Field Type="Text" DisplayName="Home Post Office" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{27e05fe1-22f9-4aed-ad97-59724e688955}" SourceID="{{listid:Employee List}}" StaticName="HomePostOffice" Name="HomePostOffice" ColName="nvarchar59" RowOrdinal="0" Version="2" CustomFormatter="" />
+            <Field Type="Text" DisplayName="Home Country" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{f3557228-55aa-4728-998f-cb2ec40e5434}" SourceID="{{listid:Employee List}}" StaticName="HomeCountry" Name="HomeCountry" ColName="nvarchar60" RowOrdinal="0" Version="2" CustomFormatter="" />
+            <Field Type="Text" DisplayName="Home P.O. Box" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{e433f9d3-3f87-41fa-bf92-ed047536df23}" SourceID="{{listid:Employee List}}" StaticName="HomePostOfficeBox" Name="HomePostOfficeBox" ColName="nvarchar61" RowOrdinal="0" Version="2" CustomFormatter="" />
+            <Field Type="User" DisplayName="Dotted Line Manager" List="UserInfo" Required="FALSE" EnforceUniqueValues="FALSE" ShowField="ImnName" UserSelectionMode="PeopleOnly" UserSelectionScope="0" ID="{479bc8de-e60e-400d-817d-b35e7ff208a8}" SourceID="{{listid:Employee List}}" StaticName="GtDottedLineManager" Name="GtDottedLineManager" ColName="int12" RowOrdinal="0" Version="3" Group="" Indexed="TRUE" />
+            <Field Type="User" DisplayName="In-Country Manager" List="UserInfo" Required="FALSE" EnforceUniqueValues="FALSE" ShowField="ImnName" UserSelectionMode="PeopleOnly" UserSelectionScope="0" ID="{58349c1e-0223-4b33-8abc-3d66b5bb993c}" SourceID="{{listid:Employee List}}" StaticName="GtInCountryManager" Name="GtInCountryManager" ColName="int13" RowOrdinal="0" Version="4" Group="" Indexed="TRUE" />
+            <Field Type="TaxonomyFieldType" DisplayName="Organizational Affiliation" List="{listid:TaxonomyHiddenList}" WebId="c34ff47a-b4f6-49a3-bc4c-4af5b05bcc17" ShowField="Term1033" Required="FALSE" EnforceUniqueValues="FALSE" ID="{38dc4025-8f27-4460-96cf-f45df08df1f0}" SourceID="{{listid:Employee List}}" StaticName="OrgAffiliation" Name="OrgAffiliation" ColName="int19" RowOrdinal="0" Version="4" Description="Select the deepest level in the Organization to add the new Employee in. For example, a Team or a Department." Group="">
+              <Default />
+              <Customization>
+                <ArrayOfProperty>
+                  <Property>
+                    <Name>SspId</Name>
+                    <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+                  </Property>
+                  <Property>
+                    <Name>GroupId</Name>
+                  </Property>
+                  <Property>
+                    <Name>TermSetId</Name>
+                    <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:GT_Organization:Organizational Unit}</Value>
+                  </Property>
+                  <Property>
+                    <Name>AnchorId</Name>
+                    <Value xmlns:q3="http://www.w3.org/2001/XMLSchema" p4:type="q3:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">00000000-0000-0000-0000-000000000000</Value>
+                  </Property>
+                  <Property>
+                    <Name>UserCreated</Name>
+                    <Value xmlns:q4="http://www.w3.org/2001/XMLSchema" p4:type="q4:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>Open</Name>
+                    <Value xmlns:q5="http://www.w3.org/2001/XMLSchema" p4:type="q5:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>TextField</Name>
+                    <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{efb5270b-30ed-4d51-9135-9edd5fb31812}</Value>
+                  </Property>
+                  <Property>
+                    <Name>IsPathRendered</Name>
+                    <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>IsKeyword</Name>
+                    <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>TargetTemplate</Name>
+                  </Property>
+                  <Property>
+                    <Name>CreateValuesInEditForm</Name>
+                    <Value xmlns:q9="http://www.w3.org/2001/XMLSchema" p4:type="q9:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterAssemblyStrongName</Name>
+                    <Value xmlns:q10="http://www.w3.org/2001/XMLSchema" p4:type="q10:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">Microsoft.SharePoint.Taxonomy, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterClassName</Name>
+                    <Value xmlns:q11="http://www.w3.org/2001/XMLSchema" p4:type="q11:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">Microsoft.SharePoint.Taxonomy.TaxonomyField</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterMethodName</Name>
+                    <Value xmlns:q12="http://www.w3.org/2001/XMLSchema" p4:type="q12:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">GetFilteringHtml</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterJavascriptProperty</Name>
+                    <Value xmlns:q13="http://www.w3.org/2001/XMLSchema" p4:type="q13:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">FilteringJavascript</Value>
+                  </Property>
+                </ArrayOfProperty>
+              </Customization>
+            </Field>
+            <Field Type="Text" DisplayName="Organizational Unit" Description="Value of this field is automatically adjustable on selection of Organizational Affiliation." Required="FALSE" EnforceUniqueValues="FALSE" Indexed="TRUE" MaxLength="255" ID="{3a73a93f-2f43-469c-a446-89aa4d52f271}" SourceID="{{listid:Employee List}}" StaticName="OrgUnitText" Name="OrgUnitText" ColName="nvarchar64" RowOrdinal="0" CustomFormatter="" Version="2" />
+            <Field Type="Text" DisplayName="Department" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="TRUE" MaxLength="255" ID="{6bdc7ae6-3423-44c6-bf47-4742c9222cd0}" SourceID="{{listid:Employee List}}" StaticName="DepartmentText" Name="DepartmentText" ColName="nvarchar65" RowOrdinal="0" Description="Value of this field is automatically adjustable on selection of Organizational Affiliation." CustomFormatter="" Version="3" />
+            <Field Type="Text" DisplayName="Team" Description="Value of this field is automatically adjustable on selection of Organizational Affiliation." Required="FALSE" EnforceUniqueValues="FALSE" Indexed="TRUE" MaxLength="255" ID="{16453434-0c00-4228-bc74-4293539303b9}" SourceID="{{listid:Employee List}}" StaticName="TeamText" Name="TeamText" ColName="nvarchar66" RowOrdinal="0" CustomFormatter="" Version="3" />
+            <Field Type="Text" DisplayName="Job Title (local)" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="TRUE" MaxLength="255" ID="{78007a3c-dd13-4c50-bf34-33d57a06d322}" SourceID="{{listid:Employee List}}" StaticName="JobTitleLocal" Name="JobTitleLocal" ColName="nvarchar67" RowOrdinal="0" Description="Enter the person’s official title in the local language." CustomFormatter="" Version="3" />
+            <Field Type="Text" DisplayName="Employee Main Status" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="TRUE" MaxLength="255" ID="{349f5ed5-e1da-4ce9-a260-06dd95ec9e26}" SourceID="{{listid:Employee List}}" StaticName="EmployeeMainStatusText" Name="EmployeeMainStatusText" ColName="nvarchar68" RowOrdinal="0" Description="Onboarding, Active or Inactive. This value defines the main status for employees." CustomFormatter="" Version="2" />
+            <Field Type="Text" DisplayName="Employee Category" Description="Employee or Non-Employee. This value defines whether or not Customer has employer responsibility." Required="FALSE" EnforceUniqueValues="FALSE" Indexed="TRUE" MaxLength="255" ID="{ba1aaddb-878a-483e-aa6d-d890500ee5ae}" SourceID="{{listid:Employee List}}" StaticName="EmployeeCategoryText" Name="EmployeeCategoryText" ColName="nvarchar69" RowOrdinal="0" CustomFormatter="" Version="2" />
+            <Field Type="TaxonomyFieldType" DisplayName="Dotted Line Affiliation" List="{listid:TaxonomyHiddenList}" WebId="c34ff47a-b4f6-49a3-bc4c-4af5b05bcc17" ShowField="Term1033" Required="FALSE" EnforceUniqueValues="FALSE" ID="{0c154015-879d-4ea6-b86d-316b9cb60b58}" SourceID="{{listid:Employee List}}" StaticName="DottedLineAffiliation" Name="DottedLineAffiliation" ColName="int20" RowOrdinal="0" Version="2" Group="">
+              <Default />
+              <Customization>
+                <ArrayOfProperty>
+                  <Property>
+                    <Name>SspId</Name>
+                    <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+                  </Property>
+                  <Property>
+                    <Name>GroupId</Name>
+                  </Property>
+                  <Property>
+                    <Name>TermSetId</Name>
+                    <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:GT_Organization:Organizational Unit}</Value>
+                  </Property>
+                  <Property>
+                    <Name>AnchorId</Name>
+                    <Value xmlns:q3="http://www.w3.org/2001/XMLSchema" p4:type="q3:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">00000000-0000-0000-0000-000000000000</Value>
+                  </Property>
+                  <Property>
+                    <Name>UserCreated</Name>
+                    <Value xmlns:q4="http://www.w3.org/2001/XMLSchema" p4:type="q4:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>Open</Name>
+                    <Value xmlns:q5="http://www.w3.org/2001/XMLSchema" p4:type="q5:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>TextField</Name>
+                    <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{65dc4768-ce3d-451a-af74-9b10ac1e4db6}</Value>
+                  </Property>
+                  <Property>
+                    <Name>IsPathRendered</Name>
+                    <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>IsKeyword</Name>
+                    <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>TargetTemplate</Name>
+                  </Property>
+                  <Property>
+                    <Name>CreateValuesInEditForm</Name>
+                    <Value xmlns:q9="http://www.w3.org/2001/XMLSchema" p4:type="q9:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterAssemblyStrongName</Name>
+                    <Value xmlns:q10="http://www.w3.org/2001/XMLSchema" p4:type="q10:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">Microsoft.SharePoint.Taxonomy, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterClassName</Name>
+                    <Value xmlns:q11="http://www.w3.org/2001/XMLSchema" p4:type="q11:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">Microsoft.SharePoint.Taxonomy.TaxonomyField</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterMethodName</Name>
+                    <Value xmlns:q12="http://www.w3.org/2001/XMLSchema" p4:type="q12:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">GetFilteringHtml</Value>
+                  </Property>
+                  <Property>
+                    <Name>FilterJavascriptProperty</Name>
+                    <Value xmlns:q13="http://www.w3.org/2001/XMLSchema" p4:type="q13:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">FilteringJavascript</Value>
+                  </Property>
+                </ArrayOfProperty>
+              </Customization>
+            </Field>
+            <Field Type="Text" DisplayName="Dotted Line Organizational Unit" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="TRUE" MaxLength="255" ID="{ae277c28-50cb-4a60-b7b2-a38dee1590a0}" SourceID="{{listid:Employee List}}" StaticName="DottedLineOrgUnitText" Name="DottedLineOrgUnitText" ColName="nvarchar70" RowOrdinal="0" Description="Value of this field is automatically adjustable on selection of Dotted Line Affiliation." CustomFormatter="" Version="3" />
+            <Field Type="Text" DisplayName="Dotted Line Department" Description="Value of this field is automatically adjustable on selection of Dotted Line Affiliation." Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{76f042a8-d869-422c-b46b-e18c24cc8e4c}" SourceID="{{listid:Employee List}}" StaticName="DottedLineDepartmentText" Name="DottedLineDepartmentText" ColName="nvarchar71" RowOrdinal="0" CustomFormatter="" Version="4" />
+            <Field Type="Text" DisplayName="Dotted Line Team" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{27e48619-ea9f-4cdd-b5cd-8d3b2fa1e7d7}" SourceID="{{listid:Employee List}}" StaticName="DottedLineTeamText" Name="DottedLineTeamText" ColName="nvarchar72" RowOrdinal="0" Description="Value of this field is automatically adjustable on selection of Dotted Line Affiliation." CustomFormatter="" Version="3" />
+            <Field Type="Boolean" DisplayName="IT-user?" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{c0c9ec62-eeab-44ed-a801-e31582002164}" SourceID="{{listid:Employee List}}" StaticName="ItUser" Name="ItUser" ColName="bit4" RowOrdinal="0" CustomFormatter="" Required="FALSE" Version="3" Description="AD-account has to be created for this employee (Yes/No).">
+              <Default>0</Default>
+            </Field>
+            <Field Type="Text" DisplayName="Display Name" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="TRUE" MaxLength="255" ID="{0952ba80-e77b-4db9-ba02-da35daf9b994}" SourceID="{{listid:Employee List}}" StaticName="Display_x0020_Name" Name="Display_x0020_Name" ColName="nvarchar73" RowOrdinal="0" Version="4" CustomFormatter="" Description="Enter the official full name for the person." />
+            <Field Type="Text" DisplayName="vLookupEquipmentRegister" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{30fd0ceb-d736-4e9e-8ec2-a69ec44619e3}" SourceID="{{listid:Employee List}}" StaticName="vLookupEquipmentRegister" Name="vLookupEquipmentRegister" ColName="nvarchar63" RowOrdinal="0" />
+            <Field Type="LookupMulti" DisplayName="Roles" Required="FALSE" EnforceUniqueValues="FALSE" List="{listid:Roles}" ShowField="Title" Mult="TRUE" Sortable="FALSE" UnlimitedLengthInDocumentLibrary="FALSE" RelationshipDeleteBehavior="None" ID="{afe85bf2-03ab-4a00-858c-eb04e8fe6523}" SourceID="{{listid:Employee List}}" StaticName="Roles" Name="Roles" ColName="int21" RowOrdinal="0" />
+            <Field DisplayName="CreateSearchTerm2" Type="URL" Required="FALSE" ID="{8010849f-f1d9-44ea-995d-06bb4f25e89c}" SourceID="{{listid:Employee List}}" StaticName="CreateSearchTerm2" Name="CreateSearchTerm2" ColName="nvarchar74" RowOrdinal="0" ColName2="nvarchar75" RowOrdinal2="0" ShowInDisplayForm="FALSE" ShowInEditForm="FALSE" ShowInNewForm="FALSE" Version="1" />
+            <Field Name="ExtraLocations" FromBaseType="FALSE" Type="Note" DisplayName="Additional locations" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" NumLines="6" Sortable="FALSE" ID="{759500af-f5fb-43c6-88b3-f5cf4adde90c}" Version="4" StaticName="ExtraLocations" SourceID="{{listid:Employee List}}" ColName="ntext20" RowOrdinal="0" CustomFormatter="" RichText="FALSE" RestrictedMode="TRUE" RichTextMode="Compatible" IsolateStyles="FALSE" AppendOnly="FALSE" />
+            <Field Type="User" DisplayName="Team Leader" List="UserInfo" Required="FALSE" EnforceUniqueValues="FALSE" ShowField="ImnName" UserSelectionMode="PeopleOnly" UserSelectionScope="0" ID="{1ac39769-0efd-4a59-8bdb-38ae9020ca3c}" SourceID="{{listid:Employee List}}" StaticName="TeamLeader" Name="TeamLeader" ColName="int22" RowOrdinal="0" Group="" Version="1" />
+            <Field Type="Boolean" DisplayName="Exclude from Org. Chart" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{a6418237-0c92-4fd4-b9f9-7bcb1161c219}" SourceID="{{listid:Employee List}}" StaticName="ExcludeFromOrgChart" Name="ExcludeFromOrgChart" ColName="bit5" RowOrdinal="0" Description="Turning ON excludes employee record from Customer Org. Chart." CustomFormatter="" Required="FALSE" Version="1">
+              <Default>0</Default>
+            </Field>
+            <Field Name="PercentagePosition" FromBaseType="FALSE" Type="Number" DisplayName="% of position" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Percentage="TRUE" Decimals="0" ID="{9dfc1d00-6f0c-457e-959e-931da746805d}" Version="2" StaticName="PercentagePosition" SourceID="{{listid:Employee List}}" ColName="float5" RowOrdinal="0">
+              <Default>1.00</Default>
+            </Field>
+            <Field ID="{76d13cd2-1bae-45a5-8b74-545b87b65037}" Name="_ColorTag" DisplaceOnUpgrade="TRUE" ShowInFileDlg="FALSE" ReadOnly="TRUE" Type="Text" DisplayName="Color Tag" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="_ColorTag" FromBaseType="TRUE" ColName="nvarchar77" />
+            <Field Type="MultiChoice" DisplayName="Employee Roles" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" FillInChoice="TRUE" ID="{903a1b05-931d-4223-95f1-4806906c655c}" SourceID="{{listid:Employee List}}" StaticName="EmployeeRoles" Name="EmployeeRoles" ColName="ntext21" RowOrdinal="0" CustomFormatter="" Version="1">
+              <CHOICES>
+                <CHOICE>Project Engineer</CHOICE>
+                <CHOICE>Regional Director</CHOICE>
+                <CHOICE>Sales Representative</CHOICE>
+                <CHOICE>Software Engineer</CHOICE>
+              </CHOICES>
+            </Field>
+          </pnp:Fields>
+          <pnp:Security>
+            <pnp:BreakRoleInheritance CopyRoleAssignments="false" ClearSubscopes="false">
+              <pnp:RoleAssignment Principal="{associatedownergroupid}" RoleDefinition="Full Control" />
+              <pnp:RoleAssignment Principal="{associatedvisitorgroupid}" RoleDefinition="Read" />
+              <pnp:RoleAssignment Principal="{associatedmembergroupid}" RoleDefinition="Contribute without Delete" />
+              <pnp:RoleAssignment Principal="HR Employee Managers" RoleDefinition="Contribute without Delete" />
+              <pnp:RoleAssignment Principal="HR Admins" RoleDefinition="Full Control" />
+              <pnp:RoleAssignment Principal="HR Readers" RoleDefinition="Read" />
+            </pnp:BreakRoleInheritance>
+          </pnp:Security>
+        </pnp:ListInstance>
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>
