@@ -11,7 +11,7 @@ const ClientPhotosReduxStore = () => {
   // useEffect(() => {
   //   dispatch(loadPhotosAsync(DbUtils.loadPhotosFromDatabase));
   // }, [dispatch]);
-  // This provides better performance of loading photos.
+  // This provides better performance of loading photos
   queueMicrotask(() =>
     dispatch(loadPhotosAsync(DbUtils.loadPhotosFromDatabase))
   );

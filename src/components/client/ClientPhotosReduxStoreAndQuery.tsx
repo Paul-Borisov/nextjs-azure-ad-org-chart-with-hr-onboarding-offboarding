@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLoadUserPhotosQuery } from "@/store/features/users/sliceUserPhotos.api";
 
 const ClientPhotosReduxStoreAndQuery = () => {
-  // This provides better performance if compared with calling the same hook within Photo.tsx
+  // This "container-level" Redux + Query logic provides better performance if compared with calling the same hook within Photo.tsx
   const { data: userPhotos } = useLoadUserPhotosQuery();
   const dispatch = useDispatch<AppDispatch>();
   const data = useSelector((state: RootState) => state.userPhotos.photos);

@@ -25,7 +25,7 @@ const ClientPhotosSessionStore = () => {
       queryKey: [photosCached],
       queryFn: ensurePhotos,
     },
-    queryClient // There is no need to use a separate parant provider. This is possible to use queryClient by passing its direct reference.
+    queryClient // There is no need to use a separate root provider. This is possible to use queryClient by passing its direct reference.
   );
 
   return null;
