@@ -36,7 +36,7 @@ export const useUnitContainer = ({
 
     setNewData(orgStructure);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchText, t]);
+  }, [searchText]);
 
   return { applyNewData, newData, searchId, selectedMaxColumns };
 };

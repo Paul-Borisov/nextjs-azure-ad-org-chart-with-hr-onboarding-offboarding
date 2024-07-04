@@ -2,6 +2,7 @@
   "name": "nextjs-org-chart",
   "version": "1.1.0",
   "private": true,
+  "packageManager": "^npm@8.0.0",
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build && @powershell copy .next/static .next/standalone/.next/static -recurse -force && @powershell copy public .next/standalone/public -recurse -force",

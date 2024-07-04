@@ -138,13 +138,13 @@ cd src
 npm i
 # Generate Prisma client
 npx prisma generate
-# Start DEV mode with turbopack for Next 14.2.x
+# Start DEV mode with turbopack 2.0.x (to install it use: npm i -g turbo@latest)
 turbo dev
-# Or, just start with npm
+# Or, just start using regular npm
 npm run dev
 # In order to compile and run standalone "Production version execute
 npm run build
-# Then remember to update .env and change to DATABASE_URL="file:../../../public/db/.sqlite"
+# Then remember to update .env and change to DATABASE_URL="file:../../../public/db/.sqlite" or just create .env.production with this line
 # Then start your "local Production" server using
 node .next/standalone/server.js
 ```
