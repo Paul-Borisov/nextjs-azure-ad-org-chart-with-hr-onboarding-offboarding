@@ -145,7 +145,7 @@ npm run dev
 # In order to compile and run standalone "Production version execute
 npm run build
 # Then remember to update .env and change to DATABASE_URL="file:../../../public/db/.sqlite" or just create .env.production with this line
-# Then start your "local Production" server using
+# Then start your "local Production" server using the command
 node .next/standalone/server.js
 ```
 
