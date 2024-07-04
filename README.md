@@ -143,8 +143,8 @@ turbo dev
 # Or, just start using regular npm
 npm run dev
 # In order to compile and run standalone "Production version execute
+# Remember to update .env and change to DATABASE_URL="file:../../../public/db/.sqlite" or just create .env.production with this line
 npm run build
-# Then remember to update .env and change to DATABASE_URL="file:../../../public/db/.sqlite" or just create .env.production with this line
 # Then start your "local Production" server using the command
 node .next/standalone/server.js
 ```
