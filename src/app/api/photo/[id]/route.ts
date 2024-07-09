@@ -1,4 +1,3 @@
-//import { getPhotoUncached } from "@/actions/users.photo";
 import { getPhotoUncached } from "@/app/api/photo/[id]/utils";
 import { NextResponse } from "next/server";
 
