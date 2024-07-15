@@ -39,5 +39,6 @@ export const generateApiAccessToken = async (
       //scopes: [`api://${clientId}/APIScope`],
       scopes: Array.isArray(scopes) ? scopes : [scopes],
       refreshToken,
+      forceCache: true,
     })
     .catch((e) => console.error(e));
