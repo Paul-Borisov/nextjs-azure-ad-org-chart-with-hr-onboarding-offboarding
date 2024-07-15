@@ -1,3 +1,5 @@
+import "server-only";
+
 import { auth } from "@/auth";
 import { addUserPhotoToDatabase } from "@/prisma/userPhotos.create";
 import { settings } from "@/shared/enums/settings";

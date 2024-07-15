@@ -1,3 +1,5 @@
+import "server-only";
+
 import { auth } from "@/auth";
 import { AzureAccountMapper } from "@/shared/mappers/azureAccountMapper";
 import { EnvSettings } from "@/shared/lib/envSettings";
