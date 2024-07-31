@@ -3,11 +3,12 @@ name: This is a Github CI workflow to build and deploy a standalone Next.js app 
 on:
   push:
     branches:
-      - beta-1.2
+      - main
 
 env:
   SERVICE_NAME: ${{ secrets.AZURE_APP_SERVICE_NAME }}
   PUBLISH_PROFILE: ${{ secrets.AZURE_APP_SERVICE_PUBLISH_PROFILE }}
+  WORKING_DIRECTORY: src
 
 jobs:
   build:
@@ -23,9 +24,9 @@ jobs:
           node-version: "20.x"
 
       - name: npm install and build
-        working-directory: ./src
+        working-directory: ${{env.WORKING_DIRECTORY}}
         run: |
-          echo "${{ secrets.ENV_FILE_CONTENT }}" > ${{github.workspace}}/.env
+          echo '${{secrets.ENV_FILE_CONTENT}}' > ${{github.workspace}}/${{env.WORKING_DIRECTORY}}/.env
           npm install
           npm run plain
           cp -r -f .next/static .next/standalone/.next/static
@@ -35,7 +36,7 @@ jobs:
         id: deploy-to-app-service
         uses: azure/webapps-deploy@v3
         with:
-          app-name: ${{ env.SERVICE_NAME }}
+          app-name: ${{env.SERVICE_NAME}}
           slot-name: "Production"
-          publish-profile: ${{ env.PUBLISH_PROFILE }}
-          package: .next
+          publish-profile: ${{env.PUBLISH_PROFILE}}
+          package: ${{env.WORKING_DIRECTORY}}/.next
