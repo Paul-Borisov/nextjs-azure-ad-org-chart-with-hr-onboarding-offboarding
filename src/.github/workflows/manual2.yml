@@ -24,7 +24,6 @@ jobs:
 
       - name: npm install and build
         run: |
-          #cp ${{github.workspace}}/.env.example ${{github.workspace}}/.env
           echo "${{ secrets.ENV_FILE_CONTENT }}" > ${{github.workspace}}/.env
           npm install
           npm run plain
