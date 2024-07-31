@@ -54,5 +54,5 @@ EXPOSE 3000
 
 ENV PORT 3000
 
-CMD HOSTNAME="0.0.0.0" node server.js
+CMD HOSTNAME="0.0.0.0" node --dns-result-order=ipv4first --trace-warnings server.js
 #CMD node server.js
