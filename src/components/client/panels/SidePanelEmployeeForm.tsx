@@ -7,10 +7,10 @@ import {
   TooltipHost,
 } from "@fluentui/react";
 import React, { Dispatch } from "react";
-import { useClientDimensions } from "@/shared/hooks/useClientDimentions";
+import { useClientDimensions } from "@/shared/hooks/useClientDimensions";
 import { useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
-import Utils from "@/shared/lib/utils";
+import useThemeMutationObserver from "@/shared/hooks/useThemeMutationObserver";
 
 //initializeIcons(); // Already registered by SearchBox.tsx
 
@@ -26,12 +26,11 @@ const SidePanelCreateNewEmployee = ({
   setIsOpen: Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const [clientWidth] = useClientDimensions();
-  const { t } = useTranslation();
   const router = useRouter();
+  const isDarkMode = useThemeMutationObserver();
+  const { t } = useTranslation();
 
   if (!isOpen) return null;
-
-  const isDarkMode = Utils.isDarkMode();
 
   return (
     <ThemeProvider theme={isDarkMode ? DarkTheme : LightTheme}>

@@ -2,13 +2,13 @@
 import { Switch, Theme } from "@radix-ui/themes";
 import Tooltip from "@/shared/components/Tooltip";
 import { useTheme } from "next-themes";
-import Utils from "@/shared/lib/utils";
 import { useTranslation } from "react-i18next";
+import useThemeMutationObserver from "@/shared/hooks/useThemeMutationObserver";
 
-const ThemeSwitch = ({ refresh }: { refresh: () => void }) => {
+const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
+  const isDarkMode = useThemeMutationObserver();
   const { t } = useTranslation();
-  const isDarkMode = Utils.isDarkMode();
 
   return (
     <Theme appearance={isDarkMode ? "dark" : "inherit"}>
@@ -19,7 +19,6 @@ const ThemeSwitch = ({ refresh }: { refresh: () => void }) => {
           variant="soft"
           onCheckedChange={() => {
             setTheme(!theme || theme === "light" ? "dark" : "light");
-            refresh();
           }}
         />
       </Tooltip>

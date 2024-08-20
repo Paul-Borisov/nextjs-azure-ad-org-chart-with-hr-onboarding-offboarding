@@ -1,21 +1,14 @@
 import "@radix-ui/themes/styles.css";
 import { Cross2Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { Button, Dialog, Theme } from "@radix-ui/themes";
-import React, { ReactNode, useMemo, useState } from "react";
+import React, { ReactNode } from "react";
 import Tooltip from "@/shared/components/Tooltip";
 import { useTranslation } from "react-i18next";
-import Utils from "@/shared/lib/utils";
+import useThemeMutationObserver from "@/shared/hooks/useThemeMutationObserver";
 
 const LevelDialog = ({ children }: { children: ReactNode }) => {
   const { t } = useTranslation();
-  const [isDarkMode, setIsDarkMode] = useState(Utils.isDarkMode());
-
-  useMemo(() => {
-    const observer = Utils.addMutationObserver(() =>
-      setIsDarkMode(Utils.isDarkMode())
-    );
-    return () => observer.disconnect();
-  }, []);
+  const isDarkMode = useThemeMutationObserver();
 
   return (
     <Theme className="max-h-fit" appearance={isDarkMode ? "dark" : "inherit"}>
