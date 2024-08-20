@@ -3,13 +3,11 @@ import { LoginButton } from "./LoginButton";
 import { Navigation } from "@/shared/components/Navigation";
 import Print from "./Print";
 import ThemeSwitch from "./ThemeSwitch";
-import { useRefresh } from "@/shared/hooks/useRefresh";
-import Utils from "@/shared/lib/utils";
 import SearchBox from "./SearchBox";
+import useThemeMutationObserver from "@/shared/hooks/useThemeMutationObserver";
 
 const Header = () => {
-  const refresh = useRefresh();
-  const isDarkMode = Utils.isDarkMode();
+  const isDarkMode = useThemeMutationObserver();
 
   return (
     <header
@@ -29,7 +27,7 @@ const Header = () => {
           <Print />
         </div>
         <div className="self-center pr-10 pt-1 tablet:inline-block">
-          <ThemeSwitch refresh={refresh} />
+          <ThemeSwitch />
         </div>
         <nav className="pr-5 self-center tablet:inline-block">
           <Locales />

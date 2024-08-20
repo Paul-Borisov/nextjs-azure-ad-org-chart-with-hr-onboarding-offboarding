@@ -1,9 +1,8 @@
 import "@radix-ui/themes/styles.css";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import { Button, Dialog, Theme } from "@radix-ui/themes";
-import React, { ReactNode, useMemo, useRef, useState } from "react";
-import { useTranslation } from "react-i18next";
-import Utils from "@/shared/lib/utils";
+import React, { ReactNode, useMemo, useRef } from "react";
+import useThemeMutationObserver from "@/shared/hooks/useThemeMutationObserver";
 
 const ConfirmationDialog = ({
   children,
@@ -20,16 +19,8 @@ const ConfirmationDialog = ({
   buttonTextCancel: string;
   headerText: string;
 }) => {
-  const { t } = useTranslation();
-  const [isDarkMode, setIsDarkMode] = useState(Utils.isDarkMode());
+  const isDarkMode = useThemeMutationObserver();
   const refClose = useRef<HTMLButtonElement>(null);
-
-  useMemo(() => {
-    const observer = Utils.addMutationObserver(() =>
-      setIsDarkMode(Utils.isDarkMode())
-    );
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <Theme className="max-h-fit" appearance={isDarkMode ? "dark" : "inherit"}>
