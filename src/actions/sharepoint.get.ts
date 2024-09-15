@@ -96,7 +96,7 @@ export const getSiteUserId = async (
     accessToken = await getAccessToken();
   }
   const json = await fetch(
-    `${siteUrl}/_api/web/SiteUsers?$filter=(UserPrincipalName eq '${userPrincipalName}')&$select=Id`,
+    `${siteUrl}/_api/web/SiteUsers?$filter=(UserPrincipalName eq '${userPrincipalName.toLocaleLowerCase()}')&$select=Id`,
     {
       method: "GET",
       headers: {

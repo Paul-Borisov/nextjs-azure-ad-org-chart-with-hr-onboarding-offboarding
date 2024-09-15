@@ -12,6 +12,8 @@ This HR onboarding and offboarding web application solves most frequent problems
 - Organizational Charts support flexible grouping by multiple user attributes up to 5 levels deep and up to 5 columns long.
 - Optional operations on local AD are done using proxy-capabilities of Azure Automation Hybrid Worker connected to a VM with access to local AD.
 
+More details are available in the <a href="docs/nextjs-entraid-hr-onboarding-offboarding-web-app.pdf">documentation</a>.
+
 ## Technical stack
 
 ### Backend
