@@ -1,13 +1,13 @@
 # HR onboarding and offboarding web app for Azure AD and local AD with flexible Organizational Charts
 
-This is known that onboarding a new employee to company's working staff and offboarding of leaving members are continuous processes.
-However, significant parts of these routines can be automated. For instance, the new employee typically joins specific manager's team.
+This is known that onboarding a new employee to the company's working staff and offboarding of leaving members are continuous processes.
+However, significant parts of these routines can be automated. For instance, the new employee typically joins a specific manager's team.
 This implies we can copy repeating parts of employee's attributes such as unit, department, country, subsidiary address and so on from the manager.
 Also, there are standard routines such as generating new sign-in credentials, joining required security groups, sending a summary report to the manager.
 
-This HR onboarding and offboarding web application solves most frequently problems related to managing employee accounts in Azure AD and hybrid local AD.
+This HR onboarding and offboarding web application solves most frequent problems related to managing employee accounts in Entra ID and Hybrid Local AD.
 
-- It provides secure convenient options to quickly create, update, and delete Entra ID and hybrid local AD accounts without a need of opening a VPN connection.
+- It provides secure convenient options to quickly create, update, and delete Entra ID and Hybrid Local AD accounts without a need of opening a VPN connection.
 - The app offers configurable Organizational Charts that provide displaying company hierarchies based on users attributes stored in Azure AD.
 - Organizational Charts support flexible grouping by multiple user attributes up to 5 levels deep and up to 5 columns long.
 - Optional operations on local AD are done using proxy-capabilities of Azure Automation Hybrid Worker connected to a VM with access to local AD.
