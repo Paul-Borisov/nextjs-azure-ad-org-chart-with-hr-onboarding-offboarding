@@ -69,11 +69,11 @@ const authenticationProviders = [];
 if (clientId && clientSecret && tenantId) {
   authenticationProviders.push(
     Entra({
-      // @ts-ignore
-      clientId: clientId,
-      // @ts-ignore
-      clientSecret: clientSecret,
-      tenantId: tenantId,
+      clientId,
+      clientSecret,
+      //tenantId,                  // This was a valid previous setup in next-auth@5.0.0-beta.19
+      //https://github.com/nextauthjs/next-auth/issues/12072
+      issuer: `${authority}/v2.0`, // This is a valid setup in next-auth@5.0.0-beta.25 (breaking changes)
       authorization: {
         params: {
           scope: accessScopes, // Defaults: openid profile User.Read email offline_access; offline_access is required to get refresh token
@@ -85,9 +85,7 @@ if (clientId && clientSecret && tenantId) {
 if (EnvSettings.googleClientId && EnvSettings.googleClientSecret) {
   authenticationProviders.push(
     GoogleProvider({
-      // @ts-ignore
       clientId: EnvSettings.googleClientId,
-      // @ts-ignore
       clientSecret: EnvSettings.googleClientSecret,
     })
   );
