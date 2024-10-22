@@ -57,6 +57,32 @@ Version 1.1
 - Optimized user photo rendering performance.
 - July 3: fixed quirks in UI: nav blinks, Radix UI body shifts.
 
+Version 1.1.1 from Oct 22, 2024
+
+- Upgraded Next.js to the latest v14 version(v14.2.15)
+- Upgraded Auth.js (next-auth) to the latest v5.0.0-beta.25. This version had a set of breaking changes if compared with the previous v5.0.0-beta.19: it uses issuer instead of tenantId in the configuration of EntraId provided like shown below
+
+```bash
+  ...
+  const authority = `https://login.microsoftonline.com/${tenantId}`;
+  ...
+  Entra({
+    clientId,
+    clientSecret,
+    //tenantId,                  // This was a valid previous setup in next-auth@5.0.0-beta.19
+    //https://github.com/nextauthjs/next-auth/issues/12072
+    issuer: `${authority}/v2.0`, // This is a valid setup in next-auth@5.0.0-beta.25 (breaking changes)
+    authorization: {
+      params: {
+        scope: accessScopes
+      },
+    },
+  })
+```
+
+- Also, there is a security fix for cookie-module used by Auth.js (and mentioned in dependencies of package-lock.json):
+  v0.6 was upgraded to v0.7.1 in order to eliminate the tiny security issue.
+
 ### Restricted access
 
 In the safest scenario, you should deploy this Next.js web app either locally or on a server located within LAN.
